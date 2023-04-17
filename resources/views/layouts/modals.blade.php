@@ -260,6 +260,136 @@
         </div>
     </div>
 
+    <!-- Modal para mostrar Foto e Transações do Aluno -->
+    <div class="modal fade modal-aluno" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background-color: var(--bs-body-bg);">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xl-5">
+
+                            <!-- Card -->
+                            <div class="card overflow-hidden">
+                                <div class="bg-primary">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="text-white p-3">
+                                                <h5 class="text-white">Extra</h5>
+                                                <p>Aluno do Sistema</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-5 align-self-end">
+                                            <img src="{{ asset('build/assets/images/aluno-img.png') }}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="avatar-md profile-user-wid mb-4">
+                                                <img src="" alt="" class="img-thumbnail rounded-circle jsonAlunoFoto" id="imgImageAlunoExtraFoto">
+                                            </div>
+                                            <h5 class="font-size-15 text-truncate jsonAlunoName"></h5>
+                                            <p class="text-muted mb-0 text-truncate jsonAlunoFuncao"></p>
+                                        </div>
+
+                                        <div class="col-sm-8">
+                                            <div class="pt-4">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <h5 class="font-size-15">Escolaridade</h5>
+                                                        <p class="text-muted mb-0 text-truncate jsonAlunoEscolaridade"></p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h5 class="font-size-15">Gênero</h5>
+                                                        <p class="text-muted mb-0 text-truncate jsonAlunoGenero"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4 mt-4 px-0">
+                                                        @if(\App\Facades\Permissoes::permissao([$ajaxPrefixPermissaoSubmodulo.'_edit'], $userLoggedPermissoes))
+                                                            <button class="btn btn-danger waves-effect btn-label waves-light btn-sm float-end" id="buttonUploadAlunoExtraFoto"><i class="fas fa-address-card label-icon"></i>Foto</button>
+                                                            <button class="btn btn-warning waves-effect btn-label waves-light btn-sm float-end" id="buttonUploadAlunoExtraFotoClose" style="display: none;"><i class="fas fa-address-card label-icon"></i>Fechar</button>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 pt-4" id="divUploadAlunoExtraFoto" style="display: none;">
+                                            <h4 class="text-success"><b>:: </b>Alterar Foto</h4>
+
+                                            <form method="post" enctype="multipart/form-data" id="frm_upload_aluno_extra_foto">
+                                                @csrf
+                                                @method('POST')
+
+                                                <input type="hidden" class="jsonAlunoId" id="upload_aluno_extra_foto_aluno_id" name="upload_aluno_extra_foto_aluno_id" value="">
+
+                                                <div class="row mt-4">
+                                                    <div class="input-group">
+                                                        <input type="file" class="form-control" name="aluno_extra_foto_file" id="aluno_extra_foto_file">
+                                                        <button type="submit" class="input-group-text">Upload</button>
+                                                    </div>
+                                                </div>
+
+                                                <span class="col-12 text-danger text-center" id="frm-upload-aluno-extra-foto-error"></span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Informações Pessoais -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Informações Pessoais</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-nowrap mb-0">
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">Name :</th>
+                                                <td class="jsonAlunoName"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">E-mail :</th>
+                                                <td class="jsonAlunoEmail"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Admissão :</th>
+                                                <td class="jsonAlunoDataAdmissao"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Transações</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-nowrap table-hover mb-0 class-datatable-2">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Operação</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="jsonAlunoTransacoesTable"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal para mostrar Foto e Transações do Funcionario -->
     <div class="modal fade modal-funcionario" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -379,6 +509,136 @@
                                             </tr>
                                             </thead>
                                             <tbody class="jsonFuncionarioTransacoesTable"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar Foto e Transações do Professor -->
+    <div class="modal fade modal-professor" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background-color: var(--bs-body-bg);">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xl-5">
+
+                            <!-- Card -->
+                            <div class="card overflow-hidden">
+                                <div class="bg-success">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="text-white p-3">
+                                                <h5 class="text-white">Extra</h5>
+                                                <p>Professor do Sistema</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-5 align-self-end">
+                                            <img src="{{ asset('build/assets/images/professor-img.png') }}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="avatar-md profile-user-wid mb-4">
+                                                <img src="" alt="" class="img-thumbnail rounded-circle jsonProfessorFoto" id="imgImageProfessorExtraFoto">
+                                            </div>
+                                            <h5 class="font-size-15 text-truncate jsonProfessorName"></h5>
+                                            <p class="text-muted mb-0 text-truncate jsonProfessorFuncao"></p>
+                                        </div>
+
+                                        <div class="col-sm-8">
+                                            <div class="pt-4">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <h5 class="font-size-15">Escolaridade</h5>
+                                                        <p class="text-muted mb-0 text-truncate jsonProfessorEscolaridade"></p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h5 class="font-size-15">Gênero</h5>
+                                                        <p class="text-muted mb-0 text-truncate jsonProfessorGenero"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4 mt-4 px-0">
+                                                        @if(\App\Facades\Permissoes::permissao([$ajaxPrefixPermissaoSubmodulo.'_edit'], $userLoggedPermissoes))
+                                                            <button class="btn btn-danger waves-effect btn-label waves-light btn-sm float-end" id="buttonUploadProfessorExtraFoto"><i class="fas fa-address-card label-icon"></i>Foto</button>
+                                                            <button class="btn btn-warning waves-effect btn-label waves-light btn-sm float-end" id="buttonUploadProfessorExtraFotoClose" style="display: none;"><i class="fas fa-address-card label-icon"></i>Fechar</button>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 pt-4" id="divUploadProfessorExtraFoto" style="display: none;">
+                                            <h4 class="text-success"><b>:: </b>Alterar Foto</h4>
+
+                                            <form method="post" enctype="multipart/form-data" id="frm_upload_professor_extra_foto">
+                                                @csrf
+                                                @method('POST')
+
+                                                <input type="hidden" class="jsonProfessorId" id="upload_professor_extra_foto_professor_id" name="upload_professor_extra_foto_professor_id" value="">
+
+                                                <div class="row mt-4">
+                                                    <div class="input-group">
+                                                        <input type="file" class="form-control" name="professor_extra_foto_file" id="professor_extra_foto_file">
+                                                        <button type="submit" class="input-group-text">Upload</button>
+                                                    </div>
+                                                </div>
+
+                                                <span class="col-12 text-danger text-center" id="frm-upload-professor-extra-foto-error"></span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Informações Pessoais -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Informações Pessoais</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-nowrap mb-0">
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">Name :</th>
+                                                <td class="jsonProfessorName"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">E-mail :</th>
+                                                <td class="jsonProfessorEmail"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Admissão :</th>
+                                                <td class="jsonProfessorDataAdmissao"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Transações</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-nowrap table-hover mb-0 class-datatable-2">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Operação</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="jsonProfessorTransacoesTable"></tbody>
                                         </table>
                                     </div>
                                 </div>

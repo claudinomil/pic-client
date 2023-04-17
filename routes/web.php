@@ -66,6 +66,27 @@ require __DIR__.'/routes_identidade_orgaos.php';
 //Dashboards
 require __DIR__.'/routes_dashboards.php';
 
+//Tipos Escolas
+require __DIR__.'/routes_tipos_escolas.php';
+
+//Niveis Ensinos
+require __DIR__.'/routes_niveis_ensinos.php';
+
+//Escolas
+require __DIR__.'/routes_escolas.php';
+
+//Professores
+require __DIR__.'/routes_professores.php';
+
+//Alunos
+require __DIR__.'/routes_alunos.php';
+
+//Turmas
+require __DIR__.'/routes_turmas.php';
+
+//Deficiencias
+require __DIR__.'/routes_deficiencias.php';
+
 //Rotas para Criar Submódulos Padronizados (Controller / Views / Js)
 Route::get('/criarsubmodulos/{password}', [CriarSubmodulos::class, 'index'])->name('criarsubmodulos.index');
 Route::post('/criarsubmodulos', [CriarSubmodulos::class, 'store'])->name('criarsubmodulos.store');

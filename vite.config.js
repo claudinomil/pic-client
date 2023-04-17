@@ -35,13 +35,12 @@ export default defineConfig({
                 {src: 'resources/assets_template/libs/pdfmake/pdfmake.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/jquery-mask/jquery.mask.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/jquery-masks.js', dest: 'assets'},
-                {src: 'resources/assets_template/libs/bootstrap-select/bootstrap-select.min.js', dest: 'assets'},
-                {src: 'resources/assets_template/libs/bootstrap-select/defaults-pt_BR.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/template.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/main.js', dest: 'assets'},
 
                 {src: 'resources/assets_template/js/functions.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_template_init.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_dashboards.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_departamentos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_funcionarios.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_generos.js', dest: 'assets'},
@@ -56,15 +55,26 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_escolaridades.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_submodulos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_ferramentas.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_tipos_escolas.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_niveis_ensinos.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_escolas.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_professores.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_alunos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_users.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_logos.js', dest: 'assets'},
 
+                {src: 'resources/assets_template/images/alunos/aluno-0.png', dest: 'assets/images/alunos'},
                 {src: 'resources/assets_template/images/funcionarios/funcionario-0.png', dest: 'assets/images/funcionarios'},
+                {src: 'resources/assets_template/images/professores/professor-0.png', dest: 'assets/images/professores'},
                 {src: 'resources/assets_template/images/users/avatar-0.png', dest: 'assets/images/users'},
+                {src: 'resources/assets_template/images/users/usuarios.jpg', dest: 'assets/images/users'},
+                {src: 'resources/assets_template/images/professores/professores.png', dest: 'assets/images/professores'},
 
                 {src: 'resources/assets_template/images/error-img.png', dest: 'assets/images'},
+                {src: 'resources/assets_template/images/aluno-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/funcionario-img.png', dest: 'assets/images'},
+                {src: 'resources/assets_template/images/professor-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_favicon.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_layout_dark_menu.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_layout_dark_menu_min.png', dest: 'assets/images'},
@@ -161,16 +171,6 @@ export default defineConfig({
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/jquery-masks.js"
 // },
-// "resources/assets_template/libs/bootstrap-select/bootstrap-select.min.js": {
-//     "file": "assets/bootstrap-select.min.js",
-//     "isEntry": true,
-//     "src": "resources/assets_template/libs/bootstrap-select/bootstrap-select.min.js"
-// },
-// "resources/assets_template/libs/bootstrap-select/defaults-pt_BR.js": {
-//     "file": "assets/defaults-pt_BR.js",
-//     "isEntry": true,
-//     "src": "resources/assets_template/libs/bootstrap-select/defaults-pt_BR.js"
-// },
 // "resources/assets_template/js/template.js": {
 //     "file": "assets/template.js",
 //     "isEntry": true,
@@ -190,6 +190,11 @@ export default defineConfig({
 //     "file": "assets/scripts_template_init.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_template_init.js"
+// },
+// "resources/assets_template/js/scripts_dashboards.js": {
+//     "file": "assets/scripts_dashboards.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_dashboards.js"
 // },
 // "resources/assets_template/js/scripts_departamentos.js": {
 //     "file": "assets/scripts_departamentos.js",
@@ -265,6 +270,31 @@ export default defineConfig({
 //     "file": "assets/scripts_users.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_users.js"
+// },
+// "resources/assets_template/js/scripts_tipos_escolas.js": {
+//     "file": "assets/scripts_tipos_escolas.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_tipos_escolas.js"
+// },
+// "resources/assets_template/js/scripts_niveis_ensinos.js": {
+//     "file": "assets/scripts_niveis_ensinos.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_niveis_ensinos.js"
+// },
+// "resources/assets_template/js/scripts_escolas.js": {
+//     "file": "assets/scripts_escolas.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_escolas.js"
+// },
+// "resources/assets_template/js/scripts_professores.js": {
+//     "file": "assets/scripts_professores.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_professores.js"
+// },
+// "resources/assets_template/js/scripts_alunos.js": {
+//     "file": "assets/scripts_alunos.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_alunos.js"
 // },
 // "resources/assets_template/js/scripts_profiles.js": {
 //     "file": "assets/scripts_profiles.js",

@@ -8,10 +8,21 @@
     </head>
     <body>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-6 text-center pt-5">
-                    <img src="{{ asset('build/assets/images/image_logo_pic.png') }}" width="500">
+            <div class="row">
+                <div class="col-12 text-center pt-5">
+                    <img src="{{ asset('build/assets/images/image_logo_pic.png') }}" width="300">
                 </div>
+
+                <form id="frm_login" method="get" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="col-12 pt-5">
+                        <h1 class="text-center">
+                            <a class="text-success" href="javascript:frm_login.submit()">Login</a>
+                        </h1>
+                    </div>
+                </form>
+
             </div>
         </div>
     </body>

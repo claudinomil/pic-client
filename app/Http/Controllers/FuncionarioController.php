@@ -135,11 +135,11 @@ class FuncionarioController extends Controller
                 if ($this->content['data_demissao'] != '') {
                     $this->content['data_demissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['data_demissao'], 0, 10))->format('d/m/Y');
                 }
-                if ($this->content['personal_identidade_data_emissao'] != '') {
-                    $this->content['personal_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['personal_identidade_data_emissao'], 0, 10))->format('d/m/Y');
+                if ($this->content['pessoal_identidade_data_emissao'] != '') {
+                    $this->content['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['pessoal_identidade_data_emissao'], 0, 10))->format('d/m/Y');
                 }
-                if ($this->content['professional_identidade_data_emissao'] != '') {
-                    $this->content['professional_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['professional_identidade_data_emissao'], 0, 10))->format('d/m/Y');
+                if ($this->content['profissional_identidade_data_emissao'] != '') {
+                    $this->content['profissional_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['profissional_identidade_data_emissao'], 0, 10))->format('d/m/Y');
                 }
 
                 return response()->json(['success' => $this->content]);
@@ -170,11 +170,11 @@ class FuncionarioController extends Controller
                 if ($this->content['data_demissao'] != '') {
                     $this->content['data_demissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['data_demissao'], 0, 10))->format('d/m/Y');
                 }
-                if ($this->content['personal_identidade_data_emissao'] != '') {
-                    $this->content['personal_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['personal_identidade_data_emissao'], 0, 10))->format('d/m/Y');
+                if ($this->content['pessoal_identidade_data_emissao'] != '') {
+                    $this->content['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['pessoal_identidade_data_emissao'], 0, 10))->format('d/m/Y');
                 }
-                if ($this->content['professional_identidade_data_emissao'] != '') {
-                    $this->content['professional_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['professional_identidade_data_emissao'], 0, 10))->format('d/m/Y');
+                if ($this->content['profissional_identidade_data_emissao'] != '') {
+                    $this->content['profissional_identidade_data_emissao'] = Carbon::createFromFormat('Y-m-d', substr($this->content['profissional_identidade_data_emissao'], 0, 10))->format('d/m/Y');
                 }
 
                 return response()->json(['success' => $this->content]);

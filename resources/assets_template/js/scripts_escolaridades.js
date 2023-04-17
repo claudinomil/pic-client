@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    if ($('#frm_scholarities').length) {
-        $('#frm_scholarities').validate({
+    if ($('#frm_escolaridades').length) {
+        $('#frm_escolaridades').validate({
             rules: {
                 name: {
                     required: true,

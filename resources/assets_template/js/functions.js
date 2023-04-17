@@ -1,3 +1,73 @@
+function alunoExtraData(id='') {
+    //Verificar se mandou id ou se veio do registro_id
+    if (id == '') {id = $('#registro_id').val();}
+
+    //URL
+    var url_atual = window.location.protocol+'//'+window.location.host+'/';
+
+    //Ajax
+    $.ajax({
+        processing: true,
+        serverSide: true,
+        type: "GET",
+        url: url_atual+"alunos/extradata/"+id,
+        data: {},
+        datatype: "json",
+        success: function (response) {
+            //Lendo json
+            let json = JSON.parse(response);
+
+            //Lendo dados aluno
+            let aluno = json.aluno;
+
+            //Passando dados aluno
+            $('.jsonAlunoFoto').attr('src', url_atual+aluno.foto);
+            $('.jsonAlunoFuncao').html(aluno.funcaoName);
+            $('.jsonAlunoEscolaridade').html(aluno.escolaridadeName);
+            $('.jsonAlunoGenero').html(aluno.generoName);
+            $('.jsonAlunoName').html(aluno.name);
+
+            $('.jsonAlunoId').val(aluno.id);
+            $('.jsonAlunoEmail').html(aluno.email);
+
+            dataAdmissao = aluno.data_admissao;
+            dataAdmissao = dataAdmissao.substring(8, 10)+'/'+dataAdmissao.substring(5, 7)+'/'+dataAdmissao.substring(0, 4);
+            $('.jsonAlunoDataAdmissao').html(dataAdmissao);
+
+            //Lendo dados transacoes (Totais)
+            let transacoesCount = json.transacoesCount;
+
+            //Lendo dados transacoes (Tabela)
+            let transacoesTable = json.transacoesTable.transacoes;
+
+            var tbodyTransacoes = '';
+
+            if (transacoesTable != '') {
+                //Passando dados transacoes (Tabela)
+                var row = 0;
+
+                function montarTable(item) {
+                    row++;
+                    operacaoName = item;
+
+                    tbodyTransacoes += "<tr><th scope='row'>" + row + "</th><td>" + operacaoName + "</td></tr>";
+                }
+
+                transacoesTable.forEach(montarTable);
+            }
+
+            //Destruindo e iniciando (Simulando um Refresh)
+            $('.class-datatable-2').DataTable().destroy();
+            $('.jsonAlunoTransacoesTable').html(tbodyTransacoes);
+            configurarDataTable(2);
+        },
+        complete: function () {},
+        error: function (response) {
+            alert('ERROR: '+response);
+        }
+    });
+}
+
 function funcionarioExtraData(id='') {
     //Verificar se mandou id ou se veio do registro_id
     if (id == '') {id = $('#registro_id').val();}
@@ -59,6 +129,76 @@ function funcionarioExtraData(id='') {
             //Destruindo e iniciando (Simulando um Refresh)
             $('.class-datatable-2').DataTable().destroy();
             $('.jsonFuncionarioTransacoesTable').html(tbodyTransacoes);
+            configurarDataTable(2);
+        },
+        complete: function () {},
+        error: function (response) {
+            alert('ERROR: '+response);
+        }
+    });
+}
+
+function professorExtraData(id='') {
+    //Verificar se mandou id ou se veio do registro_id
+    if (id == '') {id = $('#registro_id').val();}
+
+    //URL
+    var url_atual = window.location.protocol+'//'+window.location.host+'/';
+
+    //Ajax
+    $.ajax({
+        processing: true,
+        serverSide: true,
+        type: "GET",
+        url: url_atual+"professores/extradata/"+id,
+        data: {},
+        datatype: "json",
+        success: function (response) {
+            //Lendo json
+            let json = JSON.parse(response);
+
+            //Lendo dados professor
+            let professor = json.professor;
+
+            //Passando dados professor
+            $('.jsonProfessorFoto').attr('src', url_atual+professor.foto);
+            $('.jsonProfessorFuncao').html(professor.funcaoName);
+            $('.jsonProfessorEscolaridade').html(professor.escolaridadeName);
+            $('.jsonProfessorGenero').html(professor.generoName);
+            $('.jsonProfessorName').html(professor.name);
+
+            $('.jsonProfessorId').val(professor.id);
+            $('.jsonProfessorEmail').html(professor.email);
+
+            dataAdmissao = professor.data_admissao;
+            dataAdmissao = dataAdmissao.substring(8, 10)+'/'+dataAdmissao.substring(5, 7)+'/'+dataAdmissao.substring(0, 4);
+            $('.jsonProfessorDataAdmissao').html(dataAdmissao);
+
+            //Lendo dados transacoes (Totais)
+            let transacoesCount = json.transacoesCount;
+
+            //Lendo dados transacoes (Tabela)
+            let transacoesTable = json.transacoesTable.transacoes;
+
+            var tbodyTransacoes = '';
+
+            if (transacoesTable != '') {
+                //Passando dados transacoes (Tabela)
+                var row = 0;
+
+                function montarTable(item) {
+                    row++;
+                    operacaoName = item;
+
+                    tbodyTransacoes += "<tr><th scope='row'>" + row + "</th><td>" + operacaoName + "</td></tr>";
+                }
+
+                transacoesTable.forEach(montarTable);
+            }
+
+            //Destruindo e iniciando (Simulando um Refresh)
+            $('.class-datatable-2').DataTable().destroy();
+            $('.jsonProfessorTransacoesTable').html(tbodyTransacoes);
             configurarDataTable(2);
         },
         complete: function () {},
@@ -305,24 +445,6 @@ function alertSwalConfirmacaoSubmit(frm_name) {
         $('#'+frm_name).submit();
     });
 }
-
-//Modal de Confirmação para Exclusão de Registro - (CRUD)
-// function alertSwalConfirmacaoExclusaoRegistro(id, descricao) {
-//     Swal.fire({
-//         title: 'Confirma exclusão do registro?',
-//         text: descricao,
-//         icon: 'warning',
-//         showDenyButton: true,
-//         confirmButtonText: '<i class="fa fa-thumbs-up"></i> Confirmar',
-//         confirmButtonColor: '#38c172',
-//         denyButtonText: `<i class="fa fa-thumbs-down"></i> Cancelar`,
-//         denyButtonColor: '#e3342f'
-//     }).then((result) => {
-//         if (result.isConfirmed) {
-//             Livewire.emit("destroy", id);
-//         }
-//     });
-// }
 
 //Modal para Mensagens
 function alertSwal(icon='success', title='', html='', showConfirmButton=false, timer=2000) {

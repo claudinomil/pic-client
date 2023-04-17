@@ -10,7 +10,7 @@ $(document).ready(function () {
                     required: true,
                     dateMethod: true
                 },
-                gender_id: {
+                genero_id: {
                     required: true,
                     idMethod: true
                 },
@@ -18,7 +18,7 @@ $(document).ready(function () {
                     required: false,
                     idMethod: true
                 },
-                scholarity_id: {
+                escolaridade_id: {
                     required: false,
                     idMethod: true
                 },
@@ -30,11 +30,11 @@ $(document).ready(function () {
                     required: false,
                     idMethod: true
                 },
-                father: {
+                pai: {
                     required: false,
                     minlength: 3
                 },
-                mother: {
+                mae: {
                     required: false,
                     minlength: 3
                 },
@@ -42,11 +42,11 @@ $(document).ready(function () {
                     required: false,
                     email: true
                 },
-                telephone_1: {
+                telefone_1: {
                     required: false,
                     telephoneMethod: true
                 },
-                telephone_2: {
+                telefone_2: {
                     required: false,
                     telephoneMethod: true
                 },
@@ -54,7 +54,7 @@ $(document).ready(function () {
                     required: false,
                     cellularMethod: true
                 },
-                cellular_2: {
+                celular_2: {
                     required: false,
                     cellularMethod: true
                 },
@@ -70,35 +70,35 @@ $(document).ready(function () {
                     required: false,
                     dateMethod: true
                 },
-                personal_identidade_orgao_id: {
+                pessoal_identidade_orgao_id: {
                     required: false,
                     idMethod: true
                 },
-                personal_identidade_estado_id: {
+                pessoal_identidade_estado_id: {
                     required: false,
                     idMethod: true
                 },
-                personal_identidade_numero: {
+                pessoal_identidade_numero: {
                     required: false,
                     numberMethod: true
                 },
-                personal_identidade_data_emissao: {
+                pessoal_identidade_data_emissao: {
                     required: false,
                     dateMethod: true
                 },
-                professional_identidade_orgao_id: {
+                profissional_identidade_orgao_id: {
                     required: false,
                     idMethod: true
                 },
-                professional_identidade_estado_id: {
+                profissional_identidade_estado_id: {
                     required: false,
                     idMethod: true
                 },
-                professional_identidade_numero: {
+                profissional_identidade_numero: {
                     required: false,
                     numberMethod: true
                 },
-                professional_identidade_data_emissao: {
+                profissional_identidade_data_emissao: {
                     required: false,
                     dateMethod: true
                 },
@@ -193,7 +193,6 @@ $(document).ready(function () {
                             var reader = new FileReader();
                             reader.onload = function () {
                                 $("#imgImageFuncionarioExtraFoto").attr("src", reader.result);
-                                $(".header-profile-user").attr("src", reader.result);
                             }
                             reader.readAsDataURL(file);
                         }

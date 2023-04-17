@@ -14,8 +14,6 @@
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/pdfmake/pdfmake.min.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-mask/jquery.mask.min.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/jquery-masks.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/bootstrap-select/bootstrap-select.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/bootstrap-select/defaults-pt_BR.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/template.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/main.js') }}"></script>
 

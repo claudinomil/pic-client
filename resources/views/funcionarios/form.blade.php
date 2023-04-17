@@ -117,11 +117,11 @@
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Pai</label>
-                                        <input type="text" class="form-control" id="father" name="father">
+                                        <input type="text" class="form-control" id="pai" name="pai">
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Mãe</label>
-                                        <input type="text" class="form-control" id="mother" name="mother">
+                                        <input type="text" class="form-control" id="mae" name="mae">
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">E-mail</label>
@@ -129,11 +129,11 @@
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Telefone 1</label>
-                                        <input type="text" class="form-control mask_phone_with_ddd" id="telephone_1" name="telephone_1">
+                                        <input type="text" class="form-control mask_phone_with_ddd" id="telefone_1" name="telefone_1">
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Telefone 2</label>
-                                        <input type="text" class="form-control mask_phone_with_ddd" id="telephone_2" name="telephone_2">
+                                        <input type="text" class="form-control mask_phone_with_ddd" id="telefone_2" name="telefone_2">
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Celular 1</label>
@@ -141,7 +141,7 @@
                                     </div>
                                     <div class="form-group col-12 col-md-4 pb-3">
                                         <label class="form-label">Celular 2</label>
-                                        <input type="text" class="form-control mask_cell_with_ddd" id="cellular_2" name="cellular_2">
+                                        <input type="text" class="form-control mask_cell_with_ddd" id="celular_2" name="celular_2">
                                     </div>
                                 </div>
 
@@ -172,7 +172,7 @@
                                     <h5 class="pb-4 text-primary"><i class="fas fa-paste"></i> Documentos</h5>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Pessoal (Órgão)</label>
-                                        <select class="form-control select2" name="personal_identidade_orgao_id" id="personal_identidade_orgao_id">
+                                        <select class="form-control select2" name="pessoal_identidade_orgao_id" id="pessoal_identidade_orgao_id">
                                             <option value="">Selecione...</option>
 
                                             @foreach ($identidade_orgaos as $key => $identidade_orgao)
@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Pessoal (Estado)</label>
-                                        <select class="form-control select2" name="personal_identidade_estado_id" id="personal_identidade_estado_id">
+                                        <select class="form-control select2" name="pessoal_identidade_estado_id" id="pessoal_identidade_estado_id">
                                             <option value="">Selecione...</option>
 
                                             @foreach ($identidade_estados as $key => $identidade_estado)
@@ -194,15 +194,15 @@
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Pessoal (Número)</label>
-                                        <input type="text" class="form-control" id="personal_identidade_numero" name="personal_identidade_numero">
+                                        <input type="text" class="form-control" id="pessoal_identidade_numero" name="pessoal_identidade_numero">
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Pessoal (Emissão)</label>
-                                        <input type="text" class="form-control mask_date" id="personal_identidade_data_emissao" name="personal_identidade_data_emissao">
+                                        <input type="text" class="form-control mask_date" id="pessoal_identidade_data_emissao" name="pessoal_identidade_data_emissao">
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Profissional (Órgão)</label>
-                                        <select class="form-control select2" name="professional_identidade_orgao_id" id="professional_identidade_orgao_id">
+                                        <select class="form-control select2" name="profissional_identidade_orgao_id" id="profissional_identidade_orgao_id">
                                             <option value="">Selecione...</option>
 
                                             @foreach ($identidade_orgaos as $key => $identidade_orgao)
@@ -213,7 +213,7 @@
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Profissional (Estado)</label>
-                                        <select class="form-control select2" name="professional_identidade_estado_id" id="professional_identidade_estado_id">
+                                        <select class="form-control select2" name="profissional_identidade_estado_id" id="profissional_identidade_estado_id">
                                             <option value="">Selecione...</option>
 
                                             @foreach ($identidade_estados as $key => $identidade_estado)
@@ -224,11 +224,11 @@
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Profissional (Número)</label>
-                                        <input type="text" class="form-control" id="professional_identidade_numero" name="professional_identidade_numero">
+                                        <input type="text" class="form-control" id="profissional_identidade_numero" name="profissional_identidade_numero">
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">Identidade Profissional (Emissão)</label>
-                                        <input type="text" class="form-control mask_date" id="professional_identidade_data_emissao" name="professional_identidade_data_emissao">
+                                        <input type="text" class="form-control mask_date" id="profissional_identidade_data_emissao" name="profissional_identidade_data_emissao">
                                     </div>
                                     <div class="form-group col-12 col-md-3 pb-3">
                                         <label class="form-label">CPF</label>

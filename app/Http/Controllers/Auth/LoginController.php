@@ -64,8 +64,19 @@ class LoginController extends Controller
             //Gravar access_token em ums session
             session(['access_token' => $response['access_token']]);
 
-            //Redirecionar para o Submódulo inicial
-            return redirect('dashboards');
+            //Gravar dispositivo que usuário acessou de MOBILE TABLE DESKTOP
+            $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+            $isTab = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "tablet"));
+            $isDesk = !$isMob && !$isTab;
+
+            if ($isMob) {session(['access_device' => 'mobile']);}
+            if ($isTab) {session(['access_device' => 'tablet']);}
+            if ($isDesk) {session(['access_device' => 'desktop']);}
+
+            //Redirecionar
+            if (session('access_device') == 'desktop') {
+                return redirect('dashboards');
+            }
         }
 
         if ($this->code == 2004) {
