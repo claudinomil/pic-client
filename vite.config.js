@@ -96,6 +96,11 @@ export default defineConfig({
 
 // *** Colocar no manifest.json ***
 //
+// "resources/assets_template/images/image_favicon.png": {
+//     "file": "assets/image_favicon.png",
+//     "isEntry": true,
+//     "src": "resources/assets_template/images/image_favicon.png"
+// },
 // "resources/assets_template/libs/jquery/jquery.min.js": {
 //     "file": "assets/jquery.min.js",
 //     "isEntry": true,

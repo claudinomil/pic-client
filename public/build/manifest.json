@@ -129,7 +129,7 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f98ffcdb.css",
+    "file": "assets/app-842c0a76.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -162,12 +162,17 @@
       "assets/dripicons-v2-2c1ce9e2.svg"
     ],
     "css": [
-      "assets/app-f98ffcdb.css"
+      "assets/app-842c0a76.css"
     ],
-    "file": "assets/app-7524a4e8.js",
+    "file": "assets/app-e4795584.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+    "resources/assets_template/images/image_favicon.png": {
+        "file": "assets/image_favicon.png",
+        "isEntry": true,
+        "src": "resources/assets_template/images/image_favicon.png"
+    },
     "resources/assets_template/libs/jquery/jquery.min.js": {
         "file": "assets/jquery.min.js",
         "isEntry": true,
