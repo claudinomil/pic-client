@@ -20,8 +20,8 @@ $(document).ready(function () {
             }
         });
     }
-
-    //Iniciar dashboardsUsers
-    dashboardsUsers(0);
-    dashboardsProfessores(0);
+    //
+    // //Iniciar dashboardsUsers
+    // dashboardsUsers(0);
+    // dashboardsProfessores(0);
 });

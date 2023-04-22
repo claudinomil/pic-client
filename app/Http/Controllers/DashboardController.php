@@ -38,8 +38,48 @@ class DashboardController extends Controller
             if (!Permissoes::permissao(['users_list'], $request['userLoggedPermissoes'])) {$this->dashboardsUsers = '';}
             if (!Permissoes::permissao(['professores_list'], $request['userLoggedPermissoes'])) {$this->dashboardsProfessores = '';}
 
+            //Buscar dados Usuários'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            //Buscando dados Api_Data() - Lista de Registros
+            $this->responseApi(1, 8, 'dashboards', '0/dashboardsUsers', '', '', '');
+
+            $dashboardsUsersDados = $this->content['dashboardsUsersDados'];
+            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+            //Buscar dados Professores''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            //Buscando dados Api_Data() - Lista de Registros
+            $this->responseApi(1, 8, 'dashboards', '0/dashboardsProfessores', '', '', '');
+
+            $dashboardsProfessoresDados = $this->content['dashboardsProfessoresDados'];
+            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
             //Dados recebidos com sucesso
-            return view('dashboards.index', ['dashboardsUsers' => $this->dashboardsUsers, 'dashboardsProfessores' => $this->dashboardsProfessores]);
+            return view('dashboards.index', [
+                'dashboardsUsers' => $this->dashboardsUsers,
+                'dashboardsProfessores' => $this->dashboardsProfessores,
+                'dashboardsUsersDados' => $dashboardsUsersDados,
+                'dashboardsProfessoresDados' => $dashboardsProfessoresDados
+            ]);
         }
     }
+
+//    public function index(Request $request)
+//    {
+//        //Requisição Ajax
+//        if ($request->ajax()) {
+//            $id = $_GET['id'];
+//            $data = $_GET['data'];
+//
+//            //Buscando dados Api_Data() - Lista de Registros
+//            $this->responseApi(1, 8, 'dashboards', $id.'/'.$data, '', '', '');
+//
+//            return json_encode($this->content);
+//        } else {
+//            //Permissoes
+//            if (!Permissoes::permissao(['users_list'], $request['userLoggedPermissoes'])) {$this->dashboardsUsers = '';}
+//            if (!Permissoes::permissao(['professores_list'], $request['userLoggedPermissoes'])) {$this->dashboardsProfessores = '';}
+//
+//            //Dados recebidos com sucesso
+//            return view('dashboards.index', ['dashboardsUsers' => $this->dashboardsUsers, 'dashboardsProfessores' => $this->dashboardsProfessores]);
+//        }
+//    }
 }

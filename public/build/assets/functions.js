@@ -471,6 +471,11 @@ function dashboardsUsers(id) {
     //URL
     var url_atual = window.location.protocol + '//' + window.location.host + '/';
 
+    //Header
+    $.ajaxSetup({
+        headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')}
+    });
+
     //Ajax
     $.ajax({
         processing: true,
@@ -538,6 +543,11 @@ function dashboardsUsers(id) {
 function dashboardsProfessores(id) {
     //URL
     var url_atual = window.location.protocol + '//' + window.location.host + '/';
+
+    //Header
+    $.ajaxSetup({
+        headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')}
+    });
 
     //Ajax
     $.ajax({
