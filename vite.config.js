@@ -59,6 +59,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_niveis_ensinos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_escolas.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_professores.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_deficiencias.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_alunos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_users.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
@@ -295,6 +296,11 @@ export default defineConfig({
 //     "file": "assets/scripts_professores.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_professores.js"
+// },
+// "resources/assets_template/js/scripts_deficiencias.js": {
+//     "file": "assets/scripts_deficiencias.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_deficiencias.js"
 // },
 // "resources/assets_template/js/scripts_alunos.js": {
 //     "file": "assets/scripts_alunos.js",

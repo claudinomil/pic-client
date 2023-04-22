@@ -13,6 +13,10 @@
     <div id="crudTable">
         <div class="row">
 
+
+            <button class="btn" onclick="dashboardsUsers(0);">Usu</button>
+            <button class="btn" onclick="dashboardsProfessores(0);">Pro</button>
+
             <!-- Usuários -->
             <div class="col-12 col-md-6">
                 <div class="card">

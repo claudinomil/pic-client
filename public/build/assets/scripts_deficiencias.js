@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    if ($('#frm_dashboards').length) {
-        $('#frm_dashboards').validate({
+    if ($('#frm_deficiencias').length) {
+        $('#frm_deficiencias').validate({
             rules: {
                 name: {
                     required: true,
@@ -20,8 +20,4 @@ $(document).ready(function () {
             }
         });
     }
-
-    //Iniciar dashboardsUsers
-    dashboardsUsers(0);
-    dashboardsProfessores(0);
 });
