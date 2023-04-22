@@ -74,9 +74,9 @@ class LoginController extends Controller
             if ($isDesk) {session(['access_device' => 'desktop']);}
 
             //Redirecionar
-            if (session('access_device') == 'desktop') {
+            //if (session('access_device') == 'desktop') {
                 return redirect('dashboards');
-            }
+            //}
         }
 
         if ($this->code == 2004) {
