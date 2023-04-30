@@ -24,6 +24,8 @@ class Controller extends BaseController
         $response = ApiData::getData($type, $uri, $id, $search_field, $search_value, $request);
         //dd($response->json());   //TRAZER ERRO NA DEPURAÇÃO
 
+        //if ($uri == 'users/user/logged/data') {dd($response->json());}
+
         //Verificar error
         if (!isset($response['code']) or $response['code'] == 5000) {
             abort(500, 'Erro Interno => '.Route::currentRouteName().'##'.$response['message']);
@@ -68,6 +70,7 @@ class Controller extends BaseController
             if (isset($response['content']['escolas'])) {$this->escolas = $response['content']['escolas'];}
             if (isset($response['content']['professores'])) {$this->professores = $response['content']['professores'];}
             if (isset($response['content']['turmas'])) {$this->turmas = $response['content']['turmas'];}
+            if (isset($response['content']['sistema_acessos'])) {$this->sistema_acessos = $response['content']['sistema_acessos'];}
         }
     }
 

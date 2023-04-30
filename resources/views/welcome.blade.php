@@ -2,11 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8" />
-        <title> Bem vindo | {{env('APP_NAME')}}</title>
+        <title> {{env('APP_NAME')}} | Bem vindo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @include('layouts.head-css')
     </head>
-    <body>
+    <body style="background-color: #2a3042;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center pt-5">

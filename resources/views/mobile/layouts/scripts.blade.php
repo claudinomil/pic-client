@@ -1,20 +1,20 @@
 <!-- libs -->
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/bootstrap/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-validation/jquery-validation.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-validation/jquery-validation-pt-br.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/jquery-validation-methods.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/metismenu/metismenu.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/simplebar/simplebar.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/node-waves/node-waves.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/select2/select2.min.js') }}"></script>
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-validation/jquery-validation.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-validation/jquery-validation-pt-br.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/jquery-validation-methods.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/metismenu/metismenu.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/simplebar/simplebar.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/node-waves/node-waves.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/sweetalert2/sweetalert2.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/select2/select2.min.js') }}"></script>--}}
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/datatables/datatables.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jszip/jszip.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/pdfmake/pdfmake.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-mask/jquery.mask.min.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/tinymce/tinymce.js') }}"></script>
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/jquery-masks.js') }}"></script>
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jszip/jszip.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/pdfmake/pdfmake.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/jquery-mask/jquery.mask.min.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/libs/tinymce/tinymce.js') }}"></script>--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/jquery-masks.js') }}"></script>--}}
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/template.js') }}"></script>
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/main.js') }}"></script>
 
@@ -28,15 +28,12 @@
 
 @yield('script-bottom')
 
-<!-- scripts_template_init.js -->
-<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/scripts_template_init.js') }}"></script>
+{{--<!-- scripts_template_init.js -->--}}
+{{--<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/scripts_template_init.js') }}"></script>--}}
 
 @if(isset($ajaxPrefixPermissaoSubmodulo))
-    <!-- Script para CRUD Ajax -->
-    <!-- Alguns Submódulos não tem CRUD, então entra na exceção -->
-    <!-- Submódulos que não vão usar: Dashboards -->
-    @if($ajaxPrefixPermissaoSubmodulo != 'dashboards' and $ajaxPrefixPermissaoSubmodulo != 'logos')
-        {{-- Script para CRUD Ajax --}}
+    <!-- Script para MOBILE Ajax -->
+    @if($ajaxPrefixPermissaoSubmodulo != 'mobile' and $ajaxPrefixPermissaoSubmodulo != 'yyyyy')
         <script type="text/javascript">
             $(function () {
                 //Header
@@ -47,52 +44,61 @@
                 });
 
                 //Table
-                tableContent('{{$ajaxPrefixPermissaoSubmodulo}}');
+                @if (isset($colsFields))
+                    tableContent('{{$ajaxPrefixPermissaoSubmodulo}}');
 
-                function tableContent(route) {
-                    $('.datatable-crud-ajax').DataTable({
-                        language: {
-                            pageLength: {
-                                '-1': 'Mostrar todos os registros',
-                                '_': 'Mostrar %d registros'
+                    function tableContent(route) {
+                        $('.datatable-mobile-ajax').DataTable({
+                            language: {
+                                pageLength: {},
+                                //lengthMenu: 'Exibir _MENU_ resultados por página',
+                                lengthMenu: '',
+                                emptyTable: 'Nenhum registro encontrado',
+                                //info: 'Mostrando de _START_ até _END_ de _TOTAL_ registros',
+                                info: '',
+                                //infoEmpty: 'Mostrando 0 até 0 de 0 registros',
+                                infoEmpty: '',
+                                infoFiltered: '(Filtrados de _MAX_ registros)',
+                                infoThousands: '.',
+                                loadingRecords: 'Carregando...',
+                                processing: 'Processando...',
+                                zeroRecords: 'Nenhum registro encontrado',
+                                search: 'Pesquisar',
+                                //paginate: {}
+                                // paginate: {
+                                //     next: 'Próximo',
+                                //     previous: 'Anterior',
+                                //     first: 'Primeiro',
+                                //     last: 'Último'
+                                // }
                             },
-                            lengthMenu: 'Exibir _MENU_ resultados por página',
-                            emptyTable: 'Nenhum registro encontrado',
-                            info: 'Mostrando de _START_ até _END_ de _TOTAL_ registros',
-                            infoEmpty: 'Mostrando 0 até 0 de 0 registros',
-                            infoFiltered: '(Filtrados de _MAX_ registros)',
-                            infoThousands: '.',
-                            loadingRecords: 'Carregando...',
-                            processing: 'Processando...',
-                            zeroRecords: 'Nenhum registro encontrado',
-                            search: 'Pesquisar',
-                            paginate: {
-                                next: 'Próximo',
-                                previous: 'Anterior',
-                                first: 'Primeiro',
-                                last: 'Último'
-                            }
-                        },
-                        bDestroy: true,
-                        responsive: true,
-                        lengthChange: true,
-                        autoWidth: true,
-                        order: [],
+                            paginate: false,
+                            bDestroy: true,
+                            responsive: true,
+                            lengthChange: true,
+                            autoWidth: true,
+                            order: [],
+                            border: true,
 
-                        processing: true,
-                        serverSide: false,
-                        ajax: route,
-                        columns: [
-                            @foreach($colsFields as $colField)
-                                {'data': '{{$colField}}'},
-                            @endforeach
+                            processing: true,
+                            serverSide: false,
+                            ajax: route,
+                            columns: [
+                                @foreach($colsFields as $colField)
+                                {
+                                    'data': '{{$colField}}'
+                                },
+                                    @endforeach
 
-                            @if($colActions == 'yes')
-                                {'data': 'action'}
-                            @endif
-                        ]
-                    });
-                }
+                                    @if($colActions == 'yes')
+                                {
+                                    'data': 'action'
+                                }
+                                @endif
+                            ]
+                        });
+                    }
+                @endif
 
                 //Search
                 $('#searchRecords').click(function () {
@@ -142,39 +148,6 @@
 
                             //Restaurando Máscaras
                             putMask();
-
-                            //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
-                                $('.fieldsViewEdit').hide();
-                                $('.fieldsCreate').show();
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'grupos')
-                                $('.markUnmarkAll').show();
-
-                                //Desabilitar/Habilitar opções de Show
-                                $('.tdShow').hide();
-
-                                //Desabilitar/Habilitar opções de Create/Edit
-                                $('.tdCreateEdit').show();
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'ferramentas')
-                                //Esconder botão buscar icones
-                                $('#buscarIcones').show();
-
-                                $('#iconView').removeClass();
-
-                                $('.fieldsViewEdit').hide();
-                                $('.fieldsCreate').show();
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
-                                //Tinymce - limpando valor
-                                tinymce.get('descricao').setContent('');
-                                tinymce.get('descricao').getBody().setAttribute('contenteditable', true);
-                            @endif
-                            //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_permissao) {
                             alertSwal('warning', "Permissão Negada", '', 'true', 2000);
                         } else {
@@ -233,47 +206,6 @@
 
                             //Restaurando Máscaras
                             putMask();
-
-                            //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
-                                $('.fieldsViewEdit').show();
-                                $('.fieldsCreate').hide();
-
-                                $('#fieldDate').val(data.success['date']);
-                                $('#fieldTime').val(data.success['time']);
-                                $('#fieldUserName').val(data.success['userName']);
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'grupos')
-                                $('.markUnmarkAll').hide();
-
-                                //Desabilitar/Habilitar opções de Show
-                                $.each(data.success, function(i, item) {
-                                    $('.show_'+i).show();
-                                });
-
-                                //Desabilitar/Habilitar opções de Create/Edit
-                                $('.tdCreateEdit').hide();
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'ferramentas')
-                                //Esconder botão buscar icones
-                                $('#buscarIcones').hide();
-
-                                $('#iconView').removeClass();
-                                $('#iconView').addClass(data.success['icon']);
-
-                                $('.fieldsViewEdit').show();
-                                $('.fieldsCreate').hide();
-                                $('#fieldUserName').val(data.success['userName']);
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
-                                //Tinymce - preenchendo com valor do campo
-                                tinymce.get('descricao').setContent($('#descricao').val());
-                                tinymce.get('descricao').getBody().setAttribute('contenteditable', false);
-                            @endif
-                            //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_not_found) {
                             //Removendo Máscaras
                             removeMask();
@@ -354,53 +286,6 @@
 
                             //Restaurando Máscaras
                             putMask();
-
-                            //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
-                                $('.fieldsViewEdit').show();
-                                $('.fieldsCreate').hide();
-
-                                $('#fieldDate').val(data.success['date']);
-                                $('#fieldTime').val(data.success['time']);
-                                $('#fieldUserName').val(data.success['userName']);
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'grupos')
-                                $('.markUnmarkAll').show();
-
-                                //Desabilitar/Habilitar opções de Show
-                                $('.tdShow').hide();
-
-                                //Desabilitar/Habilitar opções de Create/Edit
-                                $('.tdCreateEdit').show();
-
-                                $.each(data.success, function(i, item) {
-                                    $('.create_edit_'+i).prop('checked', true);
-                                });
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'users')
-                                $('#email').prop('readonly', true);
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'ferramentas')
-                                //Esconder botão buscar icones
-                                $('#buscarIcones').show();
-
-                                $('#iconView').removeClass();
-                                $('#iconView').addClass(data.success['icon']);
-
-                                $('.fieldsViewEdit').show();
-                                $('.fieldsCreate').hide();
-                                $('#fieldUserName').val(data.success['userName']);
-                            @endif
-
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
-                                //Tinymce - preenchendo com valor do campo
-                                tinymce.get('descricao').setContent($('#descricao').val());
-                                tinymce.get('descricao').getBody().setAttribute('contenteditable', true);
-                            @endif
-                            //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_not_found) {
                             //Removendo Máscaras
                             removeMask();
@@ -501,13 +386,6 @@
 
                         //Confirm Operacao - Create
                         if ($('#frm_operacao').val() == 'create') {
-                            //Settings''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
-                                //Tinymce - pegando valor e jogando no campo
-                                $('#descricao').val(tinymce.get('descricao').getContent());
-                            @endif
-                            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
                             $.ajax({
                                 data: $('#{{$ajaxNameFormSubmodulo}}').serialize(),
                                 url: "{{route($ajaxPrefixPermissaoSubmodulo.'.store')}}",
@@ -589,13 +467,6 @@
 
                         //Confirm Operacao - Edit
                         if ($('#frm_operacao').val() == 'edit') {
-                            //Settings''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
-                                //Tinymce - pegando valor e jogando no campo
-                                $('#descricao').val(tinymce.get('descricao').getContent());
-                            @endif
-                            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
                             $.ajax({
                                 data: $('#{{$ajaxNameFormSubmodulo}}').serialize(),
                                 url: "{{$ajaxPrefixPermissaoSubmodulo}}/"+$('#registro_id').val(),
@@ -695,23 +566,31 @@
                     //Table Show/Hide
                     $('#crudTable').show();
                 });
-
-                //Configurações'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-                //Select2
-                if ($('select').hasClass('select2')) {
-                    $(".select2").select2({dropdownParent: $('#crudForm')});
-                }
-
-                if ($('select').hasClass('select2-limiting')) {
-                    $(".select2-limiting").select2({maximumSelectionLength:2, dropdownParent: $('#crudForm')});
-                }
-
-                if ($('select').hasClass('select2-search-disable')) {
-                    $(".select2-search-disable").select2({minimumResultsForSearch:1/0, dropdownParent: $('#crudForm')});
-                }
-                //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             });
         </script>
+    @endif
+
+    <!-- Configurações Comuns -->
+    <script>
+        //Logo do Topo
+        $('#divLogoTopoPrincipal').hide();
+        $('#divLogoTopoReturn').show();
+
+        //Título da Pagina
+        $('#divTitulo').html('{{mb_strtoupper($ajaxNameSubmodulo)}}');
+    </script>
+
+    <!-- Configurações Individuais -->
+    @if($ajaxPrefixPermissaoSubmodulo == 'mobile')
+        <script>
+            $('#divLogoTopoPrincipal').show();
+            $('#divLogoTopoReturn').hide();
+
+            $('#divTitulo').html('O QUE VOCÊ PRECISA SABER SOBRE:');
+        </script>
+    @endif
+
+    @if($ajaxPrefixPermissaoSubmodulo == 'mobile_escolas')
+        <script></script>
     @endif
 @endif

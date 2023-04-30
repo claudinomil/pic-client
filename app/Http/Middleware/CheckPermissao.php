@@ -57,6 +57,9 @@ class CheckPermissao
             $ajaxNameSubmodulo = $response['content']['ajaxNameSubmodulo'][0]['name']; //Variavel name do Submodulo
             $ajaxNameFormSubmodulo = 'frm_' . $ajaxPrefixPermissaoSubmodulo;
             $ajaxNamesFieldsSubmodulo = $response['content']['ajaxNamesFieldsSubmodulo']; //Array com os nomes dos campos da tabela
+
+            $userLoggedMenuModulosMobile = $response['content']['menuModulosMobile']; // Módulos Mobile
+            $userLoggedMenuSubmodulosMobile = $response['content']['menuSubmodulosMobile']; // Submódulos Mobile
         } else {
             if ($request->ajax()) {
                 return response()->json(['error_permissao' => 'Permissão Negada']);
@@ -92,6 +95,9 @@ class CheckPermissao
             'ajaxNameSubmodulo' => $ajaxNameSubmodulo,
             'ajaxNameFormSubmodulo' => $ajaxNameFormSubmodulo,
             'ajaxNamesFieldsSubmodulo' => $ajaxNamesFieldsSubmodulo,
+
+            'userLoggedMenuModulosMobile' => $userLoggedMenuModulosMobile,
+            'userLoggedMenuSubmodulosMobile' => $userLoggedMenuSubmodulosMobile,
         ]);
 
         //Retornando

@@ -51,8 +51,9 @@
                                     <label class="form-label">Nome</label>
                                     <input type="text" class="form-control" id="name" name="name" required="required">
                                 </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
+                                <div class="form-group col-12 col-md-12 pb-3">
                                     <label class="form-label">Descrição</label>
+{{--                                    <textarea class="form-control" id="descricao_tinymce" name="descricao_tinymce"></textarea>--}}
                                     <textarea class="form-control" id="descricao" name="descricao"></textarea>
                                 </div>
                             </div>

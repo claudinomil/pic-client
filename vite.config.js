@@ -34,6 +34,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/libs/jszip/jszip.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/pdfmake/pdfmake.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/jquery-mask/jquery.mask.min.js', dest: 'assets'},
+                {src: 'resources/assets_template/libs/tinymce/tinymce.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/jquery-masks.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/template.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/main.js', dest: 'assets'},
@@ -171,6 +172,11 @@ export default defineConfig({
 //     "file": "assets/jquery.mask.min.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/libs/jquery-mask/jquery.mask.min.js"
+// },
+// "resources/assets_template/libs/tinymce/tinymce.js": {
+//     "file": "assets/tinymce.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/libs/tinymce/tinymce.js"
 // },
 // "resources/assets_template/js/jquery-masks.js": {
 //     "file": "assets/jquery-masks.js",
