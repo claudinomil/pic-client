@@ -26,6 +26,43 @@
         </div>
         -->
 
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Propostas')}}</button>
+            </div>
+            <div class="col-6 px-3 py-2">
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="alert('Em desenvolvimento.')" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper('Minhas Recargas')}}</button>
+            </div>
+
 
 
 

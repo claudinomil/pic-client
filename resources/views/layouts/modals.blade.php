@@ -18,6 +18,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
+                                            <button type="button" class="btn-close float-end px-1 py-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <img src="{{ asset('build/assets/images/profile-img.png') }}" alt="" class="img-fluid">
                                         </div>
                                     </div>
@@ -279,6 +280,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
+                                            <button type="button" class="btn-close float-end px-1 py-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <img src="{{ asset('build/assets/images/aluno-img.png') }}" alt="" class="img-fluid">
                                         </div>
                                     </div>
@@ -409,6 +411,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
+                                            <button type="button" class="btn-close float-end px-1 py-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <img src="{{ asset('build/assets/images/funcionario-img.png') }}" alt="" class="img-fluid">
                                         </div>
                                     </div>
@@ -539,6 +542,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
+                                            <button type="button" class="btn-close float-end px-1 py-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <img src="{{ asset('build/assets/images/professor-img.png') }}" alt="" class="img-fluid">
                                         </div>
                                     </div>
