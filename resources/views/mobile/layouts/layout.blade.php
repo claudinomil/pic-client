@@ -19,14 +19,14 @@
             <div class="navbar-header fixed-top bg-dark bg-gradient" style="z-index: 1000;">
                 <div class="px-4" id="divLogoTopoPrincipal">
                     <span class="logo-lg">
-                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu.png') }}" alt="" width="150">
+                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu.png') }}" alt="" height="40">
                     </span>
                 </div>
                 <div class="" id="divLogoTopoReturn" style="display: none;">
                     <a href="#" onclick="window.location='{{route('mobile.index')}}'">
                         <i class="fa fa-arrow-left text-white font-size-12 px-2 py-2"></i>
                         <span class="logo-lg">
-                            <img src="{{ asset('build/assets/images/image_logo_layout_light_menu_min.png') }}" alt="" width="72">
+                            <img src="{{ asset('build/assets/images/image_logo_layout_light_menu_min.png') }}" alt="" width="40">
                         </span>
                     </a>
                 </div>

@@ -4,19 +4,19 @@
             <div class="navbar-brand-box">
                 <a href="index" class="logo" id="aLogoDark">
                     <span class="logo-sm">
-                        <img src="{{ asset('build/assets/images/image_logo_layout_dark_menu_min.png') }}" alt="" height="35">
+                        <img src="{{ asset('build/assets/images/image_logo_layout_dark_menu_min.png') }}" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('build/assets/images/image_logo_layout_dark_menu.png') }}" alt="" height="35">
+                        <img src="{{ asset('build/assets/images/image_logo_layout_dark_menu.png') }}" alt="" height="40">
                     </span>
                 </a>
 
                 <a href="index" class="logo" id="aLogoLight">
                     <span class="logo-sm">
-                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu_min.png') }}" alt="" height="35">
+                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu_min.png') }}" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu.png') }}" alt="" height="35">
+                        <img src="{{ asset('build/assets/images/image_logo_layout_light_menu.png') }}" alt="" height="40">
                     </span>
                 </a>
             </div>

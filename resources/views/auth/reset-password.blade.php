@@ -30,7 +30,7 @@
                                 <a href="index">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ Vite::asset('resources/assets_template/image_logo_login.png') }}" alt="" class="rounded-circle" height="50">
+                                            <img src="{{ Vite::asset('resources/assets_template/image_logo_login.png') }}" class="rounded-circle" width="150">
                                         </span>
                                     </div>
                                 </a>

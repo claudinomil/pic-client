@@ -27,7 +27,7 @@
                         <div class="card-body pt-0">
                             <div>
                                 <div class="auth-logo">
-                                    <img src="{{ asset('build/assets/images/image_logo_login.png') }}" style="margin-top: -35px;">
+                                    <img src="{{ asset('build/assets/images/image_logo_login.png') }}" width="150px;" style="margin-top: -67px;">
                                 </div>
                             </div>
                             <div class="p-2">
