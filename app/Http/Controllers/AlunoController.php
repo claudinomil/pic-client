@@ -20,6 +20,7 @@ class AlunoController extends Controller
     public $nacionalidades;
     public $naturalidades;
     public $turmas;
+    public $nees;
 
     public function __construct()
     {
@@ -50,13 +51,33 @@ class AlunoController extends Controller
 
                         return $retorno;
                     })
-                    ->editColumn('data_nascimento', function ($row) {
-                        $retorno = date('d/m/Y', strtotime($row['data_nascimento']));
+                    ->editColumn('idade', function ($row) {
+                        $retorno = Carbon::parse($row['data_nascimento'])->age;
+
+                        return $retorno;
+                    })
+                    ->editColumn('escola_turma_professor', function ($row) {
+                        $retorno = '<b>'.'> '.'</b>'.$row['escolaName'];
+                        $retorno .= '<br>'.'<b>'.'> '.'</b>'.$row['turmaName'];
+                        $retorno .= '<br>'.'<b>'.'> '.'</b>'.$row['professorName'];
+
+                        return $retorno;
+                    })
+                    ->editColumn('alunoNees', function ($row) {
+                        $alunoNees = explode('##', $row['alunoNees']);
+
+                        $retorno = '';
+
+                        foreach ($alunoNees as $alunoNee) {
+                            if ($retorno != '') {$retorno .= '<br>';}
+
+                            if ($alunoNee != '') {$retorno .= '<b>' . '> ' . '</b>' . $alunoNee;}
+                        }
 
                         return $retorno;
                     })
                     ->addColumn('action', function ($row, Request $request) {
-                        return $this->columnAction($row['id'], $request['userLoggedPermissoes']);
+                        return $this->columnAction($row['id'], $request['ajaxPrefixPermissaoSubmodulo'], $request['userLoggedPermissoes']);
                     })
                     ->rawColumns(['action'])
                     ->escapeColumns([])
@@ -76,6 +97,7 @@ class AlunoController extends Controller
                 'nacionalidades' => $this->nacionalidades,
                 'naturalidades' => $this->naturalidades,
                 'turmas' => $this->turmas,
+                'nees' => $this->nees
             ]);
         }
     }
@@ -115,11 +137,6 @@ class AlunoController extends Controller
 
             //Registro recebido com sucesso
             if ($this->code == 2000) {
-                //Preparando Dados para a View
-                if ($this->content['data_nascimento'] != '') {
-                    $this->content['data_nascimento'] = Carbon::createFromFormat('Y-m-d', substr($this->content['data_nascimento'], 0, 10))->format('d/m/Y');
-                }
-
                 return response()->json(['success' => $this->content]);
             } else if ($this->code == 4040) { //Registro não encontrado
                 return response()->json(['error_not_found' => $this->message]);
@@ -138,11 +155,6 @@ class AlunoController extends Controller
 
             //Registro recebido com sucesso
             if ($this->code == 2000) {
-                //Preparando Dados para a View
-                if ($this->content['data_nascimento'] != '') {
-                    $this->content['data_nascimento'] = Carbon::createFromFormat('Y-m-d', substr($this->content['data_nascimento'], 0, 10))->format('d/m/Y');
-                }
-
                 return response()->json(['success' => $this->content]);
             } else if ($this->code == 4040) { //Registro não encontrado
                 return response()->json(['error_not_found' => $this->message]);
@@ -218,7 +230,7 @@ class AlunoController extends Controller
                         return $retorno;
                     })
                     ->addColumn('action', function ($row, Request $request) {
-                        return $this->columnAction($row['id'], $request['userLoggedPermissoes']);
+                        return $this->columnAction($row['id'], $request['ajaxPrefixPermissaoSubmodulo'], $request['userLoggedPermissoes']);
                     })
                     ->rawColumns(['action'])
                     ->escapeColumns([])
@@ -313,5 +325,74 @@ class AlunoController extends Controller
                 echo 'Erro Interno Alunos.';
             }
         }
+    }
+
+    public function documento_upload(Request $request, $documento_upload_descricao)
+    {
+        //Requisição Ajax
+        if ($request->ajax()) {
+            //Variavel controle
+            $error = true;
+            $message = 'Erro: Upload não realizado, tente novamente.';
+
+            //Verificando se foi selecionado um arquivo
+            if ($request->hasFile('documento_upload_arquivo')) {
+                //pegando id do registro
+                $id = $request['registro_id'];
+
+                //buscar dados formulario
+                $arquivo_tmp = $_FILES['documento_upload_arquivo']['tmp_name'];
+                $arquivo_real = $_FILES['documento_upload_arquivo']['name'];
+                $arquivo_real = utf8_decode($arquivo_real);
+                $arquivo_type = $_FILES['documento_upload_arquivo']['type'];
+                $arquivo_size = $_FILES['documento_upload_arquivo']['size'];
+
+                //verificando se o arquivo selecionado é um pdf
+                if ($arquivo_type == 'application/pdf') {
+                    //copiando arquivo selecionado
+                    if (copy($arquivo_tmp, "build/assets/pdfs/alunos/$arquivo_real")) {
+                        //confirmar se realmente foi copiado para a pasto
+                        if (file_exists("build/assets/pdfs/alunos/" . $arquivo_real)) {
+                            //renomear para nome aluno_$id_YmdHis
+                            $name = 'aluno_'.$id.'_'.date('YmdHis');
+                            $pdf = "build/assets/pdfs/alunos/".$name.'.'.pathinfo($arquivo_real, PATHINFO_EXTENSION);
+                            $de = "build/assets/pdfs/alunos/$arquivo_real";
+                            $pa = $pdf;
+
+                            rename($de, $pa);
+
+                            //confirmar se realmente foi renomeado
+                            if (file_exists($pdf)) {
+                                $error = false;
+                                $message = 'Upload realizado com sucesso.';
+
+                                //Salvar Dados na tabela alunos_documentos
+                                $data = array();
+                                $data['aluno_id'] = $id;
+                                $data['name'] = $name;
+                                $data['descricao'] = $documento_upload_descricao;
+                                $data['caminho'] = $pdf;
+
+                                //Buscando dados Api_Data() - Incluir Registro
+                                $this->responseApi(1, 12, 'alunos/store/documentos', '', '', '', $data);
+                            }
+                        }
+                    }
+                } else {
+                    $message = 'Erro: Arquivo não é PDF';
+                }
+            } else {
+                $message = 'Erro: Escolha um arquivo PDF';
+            }
+
+            //Retornar
+            echo $message;
+        }
+    }
+
+    public function deletar_documento($aluno_documento_id)
+    {
+        //Buscando dados Api_Data() - Deletar Registro
+        $this->responseApi(1, 6, 'alunos/deletar_documento', $aluno_documento_id, '', '', '');
     }
 }

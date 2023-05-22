@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\MobileController;
 use App\Http\Controllers\MobileEscolaController;
-use App\Http\Controllers\MobileDeficienciaController;
+use App\Http\Controllers\MobileNeeController;
 
 //Mobile
 Route::prefix('mobile')->group(function () {
@@ -28,14 +28,14 @@ Route::prefix('mobile_escolas')->group(function () {
     Route::get('/search/{field}/{value}', [MobileEscolaController::class, 'search'])->name('mobile_escolas.search');
 });
 
-//Mobile Deficiencias
-Route::prefix('mobile_deficiencias')->group(function () {
-    Route::get('', [MobileDeficienciaController::class, 'index'])->name('mobile_deficiencias.index');
-    Route::get('/create', [MobileDeficienciaController::class, 'create'])->name('mobile_deficiencias.create');
-    Route::post('', [MobileDeficienciaController::class, 'store'])->name('mobile_deficiencias.store');
-    Route::get('/{id}', [MobileDeficienciaController::class, 'show'])->name('mobile_deficiencias.show');
-    Route::get('/{id}/edit', [MobileDeficienciaController::class, 'edit'])->name('mobile_deficiencias.edit');
-    Route::put('/{id}', [MobileDeficienciaController::class, 'update'])->name('mobile_deficiencias.update');
-    Route::delete('/{id}', [MobileDeficienciaController::class, 'destroy'])->name('mobile_deficiencias.destroy');
-    Route::get('/search/{field}/{value}', [MobileDeficienciaController::class, 'search'])->name('mobile_deficiencias.search');
+//Mobile Nees
+Route::prefix('mobile_nees')->group(function () {
+    Route::get('', [MobileNeeController::class, 'index'])->name('mobile_nees.index');
+    Route::get('/create', [MobileNeeController::class, 'create'])->name('mobile_nees.create');
+    Route::post('', [MobileNeeController::class, 'store'])->name('mobile_nees.store');
+    Route::get('/{id}', [MobileNeeController::class, 'show'])->name('mobile_nees.show');
+    Route::get('/{id}/edit', [MobileNeeController::class, 'edit'])->name('mobile_nees.edit');
+    Route::put('/{id}', [MobileNeeController::class, 'update'])->name('mobile_nees.update');
+    Route::delete('/{id}', [MobileNeeController::class, 'destroy'])->name('mobile_nees.destroy');
+    Route::get('/search/{field}/{value}', [MobileNeeController::class, 'search'])->name('mobile_nees.search');
 });

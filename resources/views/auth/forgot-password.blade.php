@@ -3,7 +3,7 @@
 @section('title') Recuperar Senha @endsection
 
 @section('body')
-    <body style="background-color: #2a3042;">
+    <body style="/*background-color: #2a3042;*/">
 @endsection
 
 @section('content')

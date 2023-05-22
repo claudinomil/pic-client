@@ -244,7 +244,7 @@
         "src": "resources/assets_template/libs/jquery-mask/jquery.mask.min.js"
     },
     "resources/assets_template/libs/tinymce/tinymce.js": {
-        "file": "assets/tinymce.js",
+        "file": "assets/tinymce/tinymce.js",
         "isEntry": true,
         "src": "resources/assets_template/libs/tinymce/tinymce.js"
     },
@@ -353,6 +353,11 @@
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_users.js"
     },
+    "resources/assets_template/js/scripts_avaliacoes.js": {
+        "file": "assets/scripts_avaliacoes.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_avaliacoes.js"
+    },
     "resources/assets_template/js/scripts_tipos_escolas.js": {
         "file": "assets/scripts_tipos_escolas.js",
         "isEntry": true,
@@ -373,10 +378,10 @@
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_professores.js"
     },
-    "resources/assets_template/js/scripts_deficiencias.js": {
-        "file": "assets/scripts_deficiencias.js",
+    "resources/assets_template/js/scripts_nees.js": {
+        "file": "assets/scripts_nees.js",
         "isEntry": true,
-        "src": "resources/assets_template/js/scripts_deficiencias.js"
+        "src": "resources/assets_template/js/scripts_nees.js"
     },
     "resources/assets_template/js/scripts_alunos.js": {
         "file": "assets/scripts_alunos.js",

@@ -77,7 +77,10 @@ class CheckPermissao
             }
         }
 
+        //Request
+        $request['userLoggedData'] = $userLoggedData;
         $request['userLoggedPermissoes'] = $userLoggedPermissoes;
+        $request['ajaxPrefixPermissaoSubmodulo'] = $ajaxPrefixPermissaoSubmodulo;
 
         //Gravar as Sessões de Breadcrumb
         Breadcrumb::sessionsBreadcrumb();

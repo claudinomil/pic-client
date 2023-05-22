@@ -42,45 +42,43 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <!-- View/Edit -->
-                                <div class="form-group col-12 col-md-3 pb-3 fieldsViewEdit" style="display: none;">
-                                    <label class="form-label">Data</label>
-                                    <input type="text" class="form-control" id="fieldDate" readonly="readonly">
-                                    <input type="hidden" id="date" name="date">
-                                </div>
-                                <div class="form-group col-12 col-md-3 pb-3 fieldsViewEdit" style="display: none;">
-                                    <label class="form-label">Hora</label>
-                                    <input type="text" class="form-control" id="fieldTime" readonly="readonly">
-                                    <input type="hidden" id="time" name="time">
-                                </div>
-                                <div class="form-group col-12 col-md-6 pb-3 fieldsViewEdit" style="display: none;">
-                                    <label class="form-label">Usuário</label>
-                                    <input type="text" class="form-control" id="fieldUserName" readonly="readonly">
-                                    <input type="hidden" id="user_id" name="user_id">
-                                </div>
-
-                                <!-- Create -->
-                                <div class="form-group col-12 col-md-3 pb-3 fieldsCreate" style="display: none;">
-                                    <input type="hidden" id="date" name="date" value="{{ date('Y-m-d') }}">
-                                    <input type="hidden" id="time" name="time" value="{{ date('H:i:s') }}">
-                                    <input type="hidden" id="user_id" name="user_id" value="{{ $userLoggedData['id'] }}">
-                                </div>
-
-                                <div class="form-group col-12 col-md-12 pb-3">
-                                    <label class="form-label">Título</label>
-                                    <input type="text" class="form-control" id="title" name="title" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-12 pb-3">
-                                    <label class="form-label">Notificação</label>
-                                    <textarea class="form-control" rows="3" id="notificacao" name="notificacao" required="required"></textarea>
-                                </div>
+                        <div class="row mt-4">
+                            <!-- View/Edit -->
+                            <div class="form-group col-12 col-md-3 pb-3 fieldsViewEdit" style="display: none;">
+                                <label class="form-label">Data</label>
+                                <input type="text" class="form-control" id="fieldDate" readonly="readonly">
+                                <input type="hidden" id="date" name="date">
                             </div>
-                        </fieldset>
+                            <div class="form-group col-12 col-md-3 pb-3 fieldsViewEdit" style="display: none;">
+                                <label class="form-label">Hora</label>
+                                <input type="text" class="form-control" id="fieldTime" readonly="readonly">
+                                <input type="hidden" id="time" name="time">
+                            </div>
+                            <div class="form-group col-12 col-md-6 pb-3 fieldsViewEdit" style="display: none;">
+                                <label class="form-label">Usuário</label>
+                                <input type="text" class="form-control" id="fieldUserName" readonly="readonly">
+                                <input type="hidden" id="user_id" name="user_id">
+                            </div>
+
+                            <!-- Create -->
+                            <div class="form-group col-12 col-md-3 pb-3 fieldsCreate" style="display: none;">
+                                <input type="hidden" id="date" name="date" value="{{ date('Y-m-d') }}">
+                                <input type="hidden" id="time" name="time" value="{{ date('H:i:s') }}">
+                                <input type="hidden" id="user_id" name="user_id" value="{{ $userLoggedData['id'] }}">
+                            </div>
+
+                            <div class="form-group col-12 col-md-12 pb-3">
+                                <label class="form-label">Título</label>
+                                <input type="text" class="form-control" id="title" name="title" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-12 pb-3">
+                                <label class="form-label">Notificação</label>
+                                <textarea class="form-control" rows="3" id="notificacao" name="notificacao" required="required"></textarea>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

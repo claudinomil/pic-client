@@ -611,6 +611,112 @@ function dashboardsProfessores(id) {
 }
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+//Submódulo Alunos''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+//Função para buscar dados na API (Documentos pdf do aluno para colocar na grade)
+//Paran op (1 view) (2 edit)
+function montar_grade_documentos_aluno(op) {
+    $.get('alunos/' + $('#registro_id').val(), function (data) {
+        let alunoDocumentos = data.success['alunoDocumentos'];
+
+        //Montar a grade
+        var linha = '';
+        $.each(alunoDocumentos, function(i, item) {
+            var caminho = window.location.protocol+'//'+window.location.host+'/'+item.caminho;
+
+            linha += '<tr>';
+            linha += '  <th scope="row">'+(i+1)+'</th>';
+            linha += '      <td>'+item.descricao+'</td>';
+            linha += '      <td style="vertical-align:top; white-space:nowrap;">';
+            linha += '          <div class="row">';
+            linha += '              <div class="col-1">';
+            linha += '                  <button type="button" class="btn btn-outline-info text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Documento" onclick="window.open(\''+caminho+'\', \'_blank\');"><i class="fa fa-file-pdf font-size-18"></i></button>';
+            linha += '              </div>';
+
+            //Botão Deletar documento
+            if (op == 2) {
+                linha += '              <div class="col-1">';
+                linha += '                  <button type="button" class="btn btn-outline-danger text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir Documento" onclick="deletar_documentos_aluno(' + item.id + ');"><i class="fa fa-trash-alt font-size-18"></i></button>';
+                linha += '              </div>';
+            }
+
+            linha += '          </div>';
+            linha += '      </td>';
+            linha += '</tr>';
+        });
+
+        $('#tbodyDocumentoUpload').html(linha);
+    });
+}
+
+//Função para deletar documento da grade
+function deletar_documentos_aluno(aluno_documento_id) {
+    //Confirmação de Delete
+    alertSwalConfirmacao(function (confirmed) {
+        if (confirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "alunos/deletar_documento/" + aluno_documento_id
+            });
+
+            montar_grade_documentos_aluno(2);
+        }
+    });
+}
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+//Submódulo Nees''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+//Função para buscar dados na API (Documentos pdf da nee para colocar na grade)
+//Paran op (1 view) (2 edit)
+function montar_grade_documentos_nee(op) {
+    $.get('nees/' + $('#registro_id').val(), function (data) {
+        let neeDocumentos = data.success['neeDocumentos'];
+
+        //Montar a grade
+        var linha = '';
+        $.each(neeDocumentos, function(i, item) {
+            var caminho = window.location.protocol+'//'+window.location.host+'/'+item.caminho;
+
+            linha += '<tr>';
+            linha += '  <th scope="row">'+(i+1)+'</th>';
+            linha += '      <td>'+item.descricao+'</td>';
+            linha += '      <td style="vertical-align:top; white-space:nowrap;">';
+            linha += '          <div class="row">';
+            linha += '              <div class="col-1">';
+            linha += '                  <button type="button" class="btn btn-outline-info text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Documento" onclick="window.open(\''+caminho+'\', \'_blank\');"><i class="fa fa-file-pdf font-size-18"></i></button>';
+            linha += '              </div>';
+
+            //Botão Deletar documento
+            if (op == 2) {
+                linha += '              <div class="col-1">';
+                linha += '                  <button type="button" class="btn btn-outline-danger text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir Documento" onclick="deletar_documentos_nee(' + item.id + ');"><i class="fa fa-trash-alt font-size-18"></i></button>';
+                linha += '              </div>';
+            }
+
+            linha += '          </div>';
+            linha += '      </td>';
+            linha += '</tr>';
+        });
+
+        $('#tbodyDocumentoUpload').html(linha);
+    });
+}
+
+//Função para deletar documento da grade
+function deletar_documentos_nee(nee_documento_id) {
+    //Confirmação de Delete
+    alertSwalConfirmacao(function (confirmed) {
+        if (confirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "nees/deletar_documento/" + nee_documento_id
+            });
+
+            montar_grade_documentos_nee(2);
+        }
+    });
+}
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 //Funções para Api ViaCep Para rodar em formulario sem REPEATER (Inicio)''''''''''''''''''''''''''''''''''''''''''''''''
 
 //FORMULARIO COM CAMPOS SIMPLES'''''''''''''''''''''''''''''''''''''''''''''

@@ -13,7 +13,7 @@ class MobileController extends Controller
     public $content;
 
     //Dados Auxiliares
-    public $deficiencias;
+    public $nees;
 
     public function __construct()
     {
@@ -26,15 +26,15 @@ class MobileController extends Controller
 
     public function index(Request $request)
     {
-        //Buscando dados Api_Data() - Lista de Deficiencias
-        $this->responseApi(1, 1, 'deficiencias', '', '', '', '');
+        //Buscando dados Api_Data() - Lista de Nees
+        $this->responseApi(1, 1, 'nees', '', '', '', '');
 
         //Dados recebidos com sucesso
-        if ($this->code == 2000) {$this->deficiencias = $this->content;} else {$this->deficiencias = [];}
+        if ($this->code == 2000) {$this->nees = $this->content;} else {$this->nees = [];}
 
         //View
         return view('mobile.mobile', [
-            'deficiencias' => $this->deficiencias
+            'nees' => $this->nees
         ]);
     }
 }

@@ -42,56 +42,54 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Módulo</label>
-                                    <select class="form-control select2" name="modulo_id" id="modulo_id" required="required">
-                                        <option value="">Selecione...</option>
+                        <div class="row mt-4">
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Módulo</label>
+                                <select class="form-control select2" name="modulo_id" id="modulo_id" required="required">
+                                    <option value="">Selecione...</option>
 
-                                        @foreach ($modulos as $key => $modulo)
-                                            <option value="{{ $modulo['id'] }}">{{ $modulo['name'] }}</option>
-                                        @endforeach
+                                    @foreach ($modulos as $key => $modulo)
+                                        <option value="{{ $modulo['id'] }}">{{ $modulo['name'] }}</option>
+                                    @endforeach
 
-                                    </select>
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="name" name="name" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Menu Texto</label>
-                                    <input type="text" class="form-control" id="menu_text" name="menu_text" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Menu URL</label>
-                                    <input type="text" class="form-control" id="menu_url" name="menu_url" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Menu Route</label>
-                                    <input type="text" class="form-control" id="menu_route" name="menu_route" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Menu Ícone</label>
-                                    <input type="text" class="form-control" id="menu_icon" name="menu_icon" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Prefixo Permissão</label>
-                                    <input type="text" class="form-control" id="prefix_permissao" name="prefix_permissao" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Prefixo Rota</label>
-                                    <input type="text" class="form-control" id="prefix_route" name="prefix_route" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Órdem de Visualização</label>
-                                    <input type="text" class="form-control" id="viewing_order" name="viewing_order" required="required">
-                                </div>
+                                </select>
                             </div>
-                        </fieldset>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" name="name" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Menu Texto</label>
+                                <input type="text" class="form-control" id="menu_text" name="menu_text" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Menu URL</label>
+                                <input type="text" class="form-control" id="menu_url" name="menu_url" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Menu Route</label>
+                                <input type="text" class="form-control" id="menu_route" name="menu_route" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Menu Ícone</label>
+                                <input type="text" class="form-control" id="menu_icon" name="menu_icon" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Prefixo Permissão</label>
+                                <input type="text" class="form-control" id="prefix_permissao" name="prefix_permissao" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Prefixo Rota</label>
+                                <input type="text" class="form-control" id="prefix_route" name="prefix_route" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Órdem de Visualização</label>
+                                <input type="text" class="form-control" id="viewing_order" name="viewing_order" required="required">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

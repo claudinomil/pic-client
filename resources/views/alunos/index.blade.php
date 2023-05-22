@@ -55,8 +55,8 @@
 
                     <!-- Tabela (Componente Blade) -->
                     @php
-                        $colsNames = ['#', 'Nome', 'Nascimento', 'Gênero'];
-                        $colsFields = ['foto', 'name', 'data_nascimento', 'generoName'];
+                        $colsNames = ['#', 'Nome', 'Idade', 'NEE', 'Escola/Turma/Professor'];
+                        $colsFields = ['foto', 'name', 'idade', 'alunoNees', 'escola_turma_professor'];
                         $colActions = 'yes';
                     @endphp
 

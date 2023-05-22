@@ -84,10 +84,14 @@ require __DIR__.'/routes_alunos.php';
 //Turmas
 require __DIR__.'/routes_turmas.php';
 
-//Deficiencias
-require __DIR__.'/routes_deficiencias.php';
+//Nees
+require __DIR__.'/routes_nees.php';
 
+//Avaliacoes
+require __DIR__.'/routes_avaliacoes.php';
 
+//Publico Escolas
+require __DIR__.'/routes_publico_escolas.php';
 
 //Mobile
 require __DIR__.'/routes_mobile.php';
@@ -95,3 +99,6 @@ require __DIR__.'/routes_mobile.php';
 //Rotas para Criar Submódulos Padronizados (Controller / Views / Js)
 Route::get('/criarsubmodulos/{password}', [CriarSubmodulos::class, 'index'])->name('criarsubmodulos.index');
 Route::post('/criarsubmodulos', [CriarSubmodulos::class, 'store'])->name('criarsubmodulos.store');
+
+//E-mails
+require __DIR__.'/routes_emails.php';

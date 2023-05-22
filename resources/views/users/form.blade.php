@@ -42,103 +42,101 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <div class="row pt-4">
-                                    <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Usuário</h5>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">E-mail</label>
-                                        <input type="text" class="form-control" id="email" name="email" required="required">
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="name" name="name" required="required">
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Grupo</label>
-                                        <select class="form-control select2" name="grupo_id" id="grupo_id" required="required">
-                                            <option value="">Selecione...</option>
+                        <div class="row mt-4">
+                            <div class="row pt-4">
+                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Usuário</h5>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control" id="email" name="email" required="required">
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="name" name="name" required="required">
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Grupo</label>
+                                    <select class="form-control select2" name="grupo_id" id="grupo_id" required="required">
+                                        <option value="">Selecione...</option>
 
-                                            @foreach ($grupos as $key => $grupo)
-                                                <option value="{{ $grupo['id'] }}">{{ $grupo['name'] }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Situação</label>
-                                        <select class="form-control select2" name="situacao_id" id="situacao_id" required="required">
-                                            <option value="">Selecione...</option>
+                                        @foreach ($grupos as $key => $grupo)
+                                            <option value="{{ $grupo['id'] }}">{{ $grupo['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Situação</label>
+                                    <select class="form-control select2" name="situacao_id" id="situacao_id" required="required">
+                                        <option value="">Selecione...</option>
 
-                                            @foreach ($situacoes as $key => $situacao)
-                                                <option value="{{ $situacao['id'] }}">{{ $situacao['name'] }}</option>
-                                            @endforeach
+                                        @foreach ($situacoes as $key => $situacao)
+                                            <option value="{{ $situacao['id'] }}">{{ $situacao['name'] }}</option>
+                                        @endforeach
 
-                                        </select>
-                                    </div>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row pt-4">
+                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Configurações</h5>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Acesso</label>
+                                    <select class="form-control select2" name="sistema_acesso_id" id="sistema_acesso_id" required="required">
+                                        <option value="">Selecione...</option>
+
+                                        @foreach ($sistema_acessos as $key => $sistema_acesso)
+                                            <option value="{{ $sistema_acesso['id'] }}">{{ $sistema_acesso['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Modo de layout</label>
+                                    <select class="form-control select2" name="layout_mode" id="layout_mode" required="required">
+                                        <option value=''>Selecione...</option>
+                                        <option value="layout_mode_light"> Modo Claro</option>
+                                        <option value="layout_mode_dark"> Modo Escuro</option>
+                                    </select>
                                 </div>
 
-                                <div class="row pt-4">
-                                    <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Configurações</h5>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Acesso</label>
-                                        <select class="form-control select2" name="sistema_acesso_id" id="sistema_acesso_id" required="required">
-                                            <option value="">Selecione...</option>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Estilo de Layout</label>
+                                    <select class="form-control select2" name="layout_style" id="layout_style" required="required">
+                                        <option value=''>Selecione...</option>
 
-                                            @foreach ($sistema_acessos as $key => $sistema_acesso)
-                                                <option value="{{ $sistema_acesso['id'] }}">{{ $sistema_acesso['name'] }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Modo de layout</label>
-                                        <select class="form-control select2" name="layout_mode" id="layout_mode" required="required">
-                                            <option value=''>Selecione...</option>
-                                            <option value="layout_mode_light"> Modo Claro</option>
-                                            <option value="layout_mode_dark"> Modo Escuro</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Estilo de Layout</label>
-                                        <select class="form-control select2" name="layout_style" id="layout_style" required="required">
-                                            <option value=''>Selecione...</option>
-
-                                            <!-- LIBERAR RECURSOS PARA ALTERAÇÃO DE LAYOUT DO TEMPLATE (LIBERAR CÓDIGO ABAIXO) -->
+                                        <!-- LIBERAR RECURSOS PARA ALTERAÇÃO DE LAYOUT DO TEMPLATE (LIBERAR CÓDIGO ABAIXO) -->
 {{--                                            <option value="layout_style_vertical_light_sidebar">Vertical - Barra Lateral Leve</option>--}}
 {{--                                            <option value="layout_style_vertical_compact_sidebar">Vertical - Barra Lateral Compacta</option>--}}
 {{--                                            <option value="layout_style_vertical_icon_sidebar">Vertical - Barra lateral de ícones</option>--}}
 {{--                                            <option value="layout_style_vertical_boxed_width">Vertical - Largura da Caixa</option>--}}
 {{--                                            <option value="layout_style_vertical_colored_sidebar">Vertical - Barra Lateral Colorida</option>--}}
-                                            <option value="layout_style_vertical_scrollable">Vertical - Rolável</option>
+                                        <option value="layout_style_vertical_scrollable">Vertical - Rolável</option>
 
-                                            <!-- LIBERAR RECURSOS PARA ALTERAÇÃO DE LAYOUT DO TEMPLATE (LIBERAR CÓDIGO ABAIXO) -->
+                                        <!-- LIBERAR RECURSOS PARA ALTERAÇÃO DE LAYOUT DO TEMPLATE (LIBERAR CÓDIGO ABAIXO) -->
 {{--                                            <option value="layout_style_horizontal_horizontal">Horizontal - Horizontal</option>--}}
 {{--                                            <option value="layout_style_horizontal_topbar_light">Horizontal - Luz da Barra Superior</option>--}}
 {{--                                            <option value="layout_style_horizontal_boxed_width">Horizontal - Largura da Caixa</option>--}}
 {{--                                            <option value="layout_style_horizontal_colored_header">Horizontal - Cabeçalho Colorido</option>--}}
 {{--                                            <option value="layout_style_horizontal_scrollable">Horizontal - Rolável</option>--}}
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row pt-4">
-                                    <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Referência</h5>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Funcionário</label>
-                                        <select class="form-control select2" name="funcionario_id" id="funcionario_id">
-                                            <option value="">Selecione...</option>
-
-                                            @foreach ($funcionarios as $key => $funcionario)
-                                                <option value="{{ $funcionario['id'] }}">{{ $funcionario['name'] }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                    </select>
                                 </div>
                             </div>
-                        </fieldset>
+
+                            <div class="row pt-4">
+                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Referência</h5>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Funcionário</label>
+                                    <select class="form-control select2" name="funcionario_id" id="funcionario_id">
+                                        <option value="">Selecione...</option>
+
+                                        @foreach ($funcionarios as $key => $funcionario)
+                                            <option value="{{ $funcionario['id'] }}">{{ $funcionario['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

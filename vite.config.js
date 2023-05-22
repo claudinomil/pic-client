@@ -34,7 +34,11 @@ export default defineConfig({
                 {src: 'resources/assets_template/libs/jszip/jszip.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/pdfmake/pdfmake.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/jquery-mask/jquery.mask.min.js', dest: 'assets'},
-                {src: 'resources/assets_template/libs/tinymce/tinymce.js', dest: 'assets'},
+
+                //Copiando a pasta tinymce completa''''''''''''''''''''''''''''''''
+                {src: 'resources/assets_template/libs/tinymce', dest: 'assets'},
+                //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
                 {src: 'resources/assets_template/js/jquery-masks.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/template.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/main.js', dest: 'assets'},
@@ -60,12 +64,12 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_niveis_ensinos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_escolas.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_professores.js', dest: 'assets'},
-                {src: 'resources/assets_template/js/scripts_deficiencias.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_nees.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_alunos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_users.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_avaliacoes.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_logos.js', dest: 'assets'},
-
                 {src: 'resources/assets_template/images/alunos/aluno-0.png', dest: 'assets/images/alunos'},
                 {src: 'resources/assets_template/images/funcionarios/funcionario-0.png', dest: 'assets/images/funcionarios'},
                 {src: 'resources/assets_template/images/professores/professor-0.png', dest: 'assets/images/professores'},
@@ -85,11 +89,13 @@ export default defineConfig({
                 {src: 'resources/assets_template/images/image_logo_login.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_pic.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_relatorio.png', dest: 'assets/images'},
+                {src: 'resources/assets_template/images/image_logo_email.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/megamenu-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/profile-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/welcome_logo.png', dest: 'assets/images'},
 
-                // {src: path.join(__dirname, 'resources/assets_template/images'), dest: path.join(__dirname, '/public')},
+                {src: 'resources/assets_template/pdfs/alunos/pdf.pdf', dest: 'assets/pdfs/alunos'},
+                {src: 'resources/assets_template/pdfs/nees/pdf.pdf', dest: 'assets/pdfs/nees'},
             ]
         })
     ]
@@ -174,7 +180,7 @@ export default defineConfig({
 //     "src": "resources/assets_template/libs/jquery-mask/jquery.mask.min.js"
 // },
 // "resources/assets_template/libs/tinymce/tinymce.js": {
-//     "file": "assets/tinymce.js",
+//     "file": "assets/tinymce/tinymce.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/libs/tinymce/tinymce.js"
 // },
@@ -283,6 +289,11 @@ export default defineConfig({
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_users.js"
 // },
+// "resources/assets_template/js/scripts_avaliacoes.js": {
+//     "file": "assets/scripts_avaliacoes.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_avaliacoes.js"
+// },
 // "resources/assets_template/js/scripts_tipos_escolas.js": {
 //     "file": "assets/scripts_tipos_escolas.js",
 //     "isEntry": true,
@@ -303,10 +314,10 @@ export default defineConfig({
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_professores.js"
 // },
-// "resources/assets_template/js/scripts_deficiencias.js": {
-//     "file": "assets/scripts_deficiencias.js",
+// "resources/assets_template/js/scripts_nees.js": {
+//     "file": "assets/scripts_nees.js",
 //     "isEntry": true,
-//     "src": "resources/assets_template/js/scripts_deficiencias.js"
+//     "src": "resources/assets_template/js/scripts_nees.js"
 // },
 // "resources/assets_template/js/scripts_alunos.js": {
 //     "file": "assets/scripts_alunos.js",
@@ -322,4 +333,4 @@ export default defineConfig({
 //     "file": "assets/scripts_logos.js",
 //         "isEntry": true,
 //         "src": "resources/assets_template/js/scripts_logos.js"
-// }
+// },

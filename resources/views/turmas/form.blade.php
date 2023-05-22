@@ -42,61 +42,59 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <div class="row pt-4">
-                                    <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Dados Pessoais</h5>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="name" name="name" required="required">
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Escola</label>
-                                        <select class="select2 form-control" name="escola_id" id="escola_id" required="required">
-                                            <option value="">Selecione...</option>
+                        <div class="row mt-4">
+                            <div class="row pt-4">
+                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Dados Pessoais</h5>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="name" name="name" required="required">
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Escola</label>
+                                    <select class="select2 form-control" name="escola_id" id="escola_id" required="required">
+                                        <option value="">Selecione...</option>
 
-                                            @foreach ($escolas as $key => $escola)
-                                                <option value="{{ $escola['id'] }}">{{ $escola['name'] }}</option>
-                                            @endforeach
+                                        @foreach ($escolas as $key => $escola)
+                                            <option value="{{ $escola['id'] }}">{{ $escola['name'] }}</option>
+                                        @endforeach
 
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Nível Ensino</label>
-                                        <select class="form-control select2" name="nivel_ensino_id" id="nivel_ensino_id">
-                                            <option value="">Selecione...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Nível Ensino</label>
+                                    <select class="form-control select2" name="nivel_ensino_id" id="nivel_ensino_id">
+                                        <option value="">Selecione...</option>
 
-                                            @foreach ($niveis_ensinos as $key => $nivel_ensino)
-                                                <option value="{{ $nivel_ensino['id'] }}">{{ $nivel_ensino['name'] }}</option>
-                                            @endforeach
+                                        @foreach ($niveis_ensinos as $key => $nivel_ensino)
+                                            <option value="{{ $nivel_ensino['id'] }}">{{ $nivel_ensino['name'] }}</option>
+                                        @endforeach
 
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Professor</label>
-                                        <select class="form-control select2" name="professor_id" id="professor_id">
-                                            <option value="">Selecione...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Professor</label>
+                                    <select class="form-control select2" name="professor_id" id="professor_id">
+                                        <option value="">Selecione...</option>
 
-                                            @foreach ($professores as $key => $professor)
-                                                <option value="{{ $professor['id'] }}">{{ $professor['name'] }}</option>
-                                            @endforeach
+                                        @foreach ($professores as $key => $professor)
+                                            <option value="{{ $professor['id'] }}">{{ $professor['name'] }}</option>
+                                        @endforeach
 
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Quantidade Alunos</label>
-                                        <input type="number" class="form-control" id="quantidade_alunos" name="quantidade_alunos" required="required">
-                                    </div>
-                                    <div class="form-group col-12 col-md-4 pb-3">
-                                        <label class="form-label">Sala</label>
-                                        <input type="text" class="form-control" id="sala" name="sala" required="required">
-                                    </div>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Quantidade Alunos</label>
+                                    <input type="number" class="form-control" id="quantidade_alunos" name="quantidade_alunos" required="required">
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Sala</label>
+                                    <input type="text" class="form-control" id="sala" name="sala" required="required">
                                 </div>
                             </div>
-                        </fieldset>
+                        </div>
                     </form>
                 </div>
             </div>

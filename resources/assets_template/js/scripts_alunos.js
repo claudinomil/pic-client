@@ -11,15 +11,19 @@ $(document).ready(function () {
                     dateMethod: true
                 },
                 genero_id: {
-                    required: true,
+                    required: false,
                     idMethod: true
                 },
                 turma_id: {
                     required: true,
                     idMethod: true
                 },
-                raca_id: {
+                data_matricula: {
                     required: true,
+                    dateMethod: true
+                },
+                raca_id: {
+                    required: false,
                     idMethod: true
                 },
                 nacionalidade_id: {
@@ -47,7 +51,7 @@ $(document).ready(function () {
                     telephoneMethod: true
                 },
                 cpf: {
-                    required: true,
+                    required: false,
                     cpfMethod: true
                 },
                 cep: {
@@ -77,7 +81,7 @@ $(document).ready(function () {
         });
     }
 
-    <!-- Script para Aluno "Botão Extra" -->
+    //Funções para o formulário'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     $(function () {
         //Header
         $.ajaxSetup({
@@ -86,7 +90,7 @@ $(document).ready(function () {
             }
         });
 
-        //Update Foto'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        //Update Foto
         $('#buttonUploadAlunoExtraFoto').click(function () {
             //Preparar
             $('#divUploadAlunoExtraFoto').show();
@@ -136,6 +140,42 @@ $(document).ready(function () {
                 }
             });
         });
-        //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+        //Fazer Upload do Documento
+        $('.btn_documento_upload_upload').click(function () {
+            let formData = new FormData($('#frm_alunos')[0]);
+
+            //Verificando se digitou o campo Nome do Documento PDF (documento_upload_descricao)
+            if ($('#documento_upload_descricao').val() == '') {
+                alert('Digite a Descrição para o Documento PDF.');
+                return;
+            }
+
+            //Ajax
+            $.ajax({
+                type: 'POST',
+                url: '/alunos/documento_upload/'+$('#documento_upload_descricao').val(),
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.substring(0, 4) != 'Erro') {
+                        $('#documento_upload_arquivo').val('');
+                        $('#documento_upload_descricao').val('');
+
+                        $('#tbodyDocumentoUpload').html('');
+
+                        montar_grade_documentos_aluno(2);
+                    }
+
+                    alert(response);
+                },
+                error: function (response) {
+                    alert(response);
+                }
+            });
+        });
     });
+    //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 });

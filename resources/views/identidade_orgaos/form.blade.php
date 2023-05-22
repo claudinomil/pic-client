@@ -42,21 +42,19 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="name" name="name" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Sigla</label>
-                                    <input type="text" class="form-control" id="sigla" name="sigla" required="required">
-                                </div>
+                        <div class="row mt-4">
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" name="name" required="required">
                             </div>
-                        </fieldset>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Sigla</label>
+                                <input type="text" class="form-control" id="sigla" name="sigla" required="required">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

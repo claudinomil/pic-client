@@ -15,4 +15,7 @@ Route::prefix('alunos')->group(function () {
 
     Route::get('/extradata/{id}', [AlunoController::class, 'extradata']);
     Route::post('/uploadfoto', [AlunoController::class, 'uploadfoto'])->name('alunos.uploadfoto');
+
+    Route::post('/documento_upload/{documento_upload_descricao}', [AlunoController::class, 'documento_upload'])->name('alunos.documento_upload');
+    Route::delete('/deletar_documento/{aluno_documento_id}', [AlunoController::class, 'deletar_documento'])->name('alunos.deletar_documento');
 });

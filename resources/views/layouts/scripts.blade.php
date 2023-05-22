@@ -50,6 +50,32 @@
                 tableContent('{{$ajaxPrefixPermissaoSubmodulo}}');
 
                 function tableContent(route) {
+                    //Avaliações - Entrar direto no Create''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                    @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
+                    //Table Show/Hide
+                    $('#crudTable').hide();
+
+                    //retirando botão Cancelar
+                    $('.crudFormCancelOperacao').hide();
+
+                    //Verificar se o usuario já avaliou
+                    $.get("{{$ajaxPrefixPermissaoSubmodulo}}/avaliar/user", function (data) {
+                        if (!data.avaliar_user) {
+                            $('#createNewRecord').trigger('click');
+                        } else {
+                            //Form Show/Hide
+                            $('#crudForm').hide();
+
+                            //crudAvaliado Show/Hide
+                            $('#crudAvaliado').show();
+                        }
+                    });
+
+                    //Parar a função tableContent
+                    return;
+                    @endif
+                    //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
                     $('.datatable-crud-ajax').DataTable({
                         language: {
                             pageLength: {
@@ -124,7 +150,9 @@
                             $('#frm_operacao').val('create');
 
                             //Campos do Formulário - disabled true/false
-                            $('#fieldsetForm').prop('disabled', false);
+                            $('input').prop('disabled', false);
+                            $('textarea').prop('disabled', false);
+                            $('select').prop('disabled', false);
                             $('.select2').prop('disabled', false);
 
                             //Botões do Modal
@@ -144,6 +172,18 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
+                                //desmarcar checkboxs nee_id_
+                                $('.cbNeeId').attr('checked', false);
+
+                                //Aluno Documentos
+                                $('#tbodyDocumentoUpload').html('');
+
+                                //Display divInformacoesEducacionais
+                                $('#divInformacoesEducacionais').hide();
+                                $('#divInformacoesEducacionaisUpload').hide();
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
                                 $('.fieldsViewEdit').hide();
                                 $('.fieldsCreate').show();
@@ -169,10 +209,17 @@
                                 $('.fieldsCreate').show();
                             @endif
 
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
+                            @if($ajaxPrefixPermissaoSubmodulo == 'nees')
                                 //Tinymce - limpando valor
                                 tinymce.get('descricao').setContent('');
                                 tinymce.get('descricao').getBody().setAttribute('contenteditable', true);
+
+                                //Nee Documentos
+                                $('#tbodyDocumentoUpload').html('');
+
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').hide();
+                                $('#divDocumentosPdfsUpload').hide();
                             @endif
                             //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_permissao) {
@@ -215,7 +262,9 @@
                             $('#frm_operacao').val('view');
 
                             //Campos do Formulário - disabled true/false
-                            $('#fieldsetForm').prop('disabled', true);
+                            $('input').prop('disabled', true);
+                            $('textarea').prop('disabled', true);
+                            $('select').prop('disabled', true);
                             $('.select2').prop('disabled', true);
 
                             //Botões do Modal
@@ -235,6 +284,28 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
+                                //desmarcar checkboxs nee_id_
+                                $('.cbNeeId').attr('checked', false);
+
+                                //AlunoNees
+                                alunoNees = data.success['alunoNees'];
+
+                                $.each(alunoNees, function(i, item) {
+                                    //marcar como checado
+                                    $('#nee_id_'+item.nee_id).attr('checked', true);
+                                });
+
+                                //Display divInformacoesEducacionais
+                                $('#divInformacoesEducacionais').show();
+                                $('#divInformacoesEducacionaisUpload').hide();
+
+                                //AlunoDocumentos
+                                alunoDocumentos = data.success['alunoDocumentos'];
+
+                                montar_grade_documentos_aluno(1);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
                                 $('.fieldsViewEdit').show();
                                 $('.fieldsCreate').hide();
@@ -268,10 +339,31 @@
                                 $('#fieldUserName').val(data.success['userName']);
                             @endif
 
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
+                            @if($ajaxPrefixPermissaoSubmodulo == 'nees')
                                 //Tinymce - preenchendo com valor do campo
                                 tinymce.get('descricao').setContent($('#descricao').val());
                                 tinymce.get('descricao').getBody().setAttribute('contenteditable', false);
+
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').show();
+                                $('#divDocumentosPdfsUpload').hide();
+
+                                //NeeDocumentos
+                                neeDocumentos = data.success['neeDocumentos'];
+
+                                montar_grade_documentos_nee(1);
+                            @endif
+
+                            @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
+                            //Verificar se precisa checked resposta_pergunta_1
+                            if (data.success['resposta_pergunta_1'] == 1) {$('#resposta_pergunta_1_1').prop('checked', true);}
+                            if (data.success['resposta_pergunta_1'] == 2) {$('#resposta_pergunta_1_2').prop('checked', true);}
+                            if (data.success['resposta_pergunta_1'] == 3) {$('#resposta_pergunta_1_3').prop('checked', true);}
+
+                            //Verificar se precisa checked resposta_pergunta_2
+                            if (data.success['resposta_pergunta_2'] == 1) {$('#resposta_pergunta_2_1').prop('checked', true);}
+                            if (data.success['resposta_pergunta_2'] == 2) {$('#resposta_pergunta_2_2').prop('checked', true);}
+                            if (data.success['resposta_pergunta_2'] == 3) {$('#resposta_pergunta_2_3').prop('checked', true);}
                             @endif
                             //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_not_found) {
@@ -336,7 +428,9 @@
                             $('#frm_operacao').val('edit');
 
                             //Campos do Formulário - disabled true/false
-                            $('#fieldsetForm').prop('disabled', false);
+                            $('input').prop('disabled', false);
+                            $('textarea').prop('disabled', false);
+                            $('select').prop('disabled', false);
                             $('.select2').prop('disabled', false);
 
                             //Botões do Modal
@@ -356,6 +450,28 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
+                                //desmarcar checkboxs nee_id_
+                                $('.cbNeeId').attr('checked', false);
+
+                                //AlunoNees
+                                alunoNees = data.success['alunoNees'];
+
+                                $.each(alunoNees, function(i, item) {
+                                    //marcar como checado
+                                    $('#nee_id_'+item.nee_id).attr('checked', true);
+                                });
+
+                                //Display divInformacoesEducacionais
+                                $('#divInformacoesEducacionais').show();
+                                $('#divInformacoesEducacionaisUpload').show();
+
+                                //AlunoDocumentos
+                                alunoDocumentos = data.success['alunoDocumentos'];
+
+                                montar_grade_documentos_aluno(2);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'notificacoes')
                                 $('.fieldsViewEdit').show();
                                 $('.fieldsCreate').hide();
@@ -395,10 +511,31 @@
                                 $('#fieldUserName').val(data.success['userName']);
                             @endif
 
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
+                            @if($ajaxPrefixPermissaoSubmodulo == 'nees')
                                 //Tinymce - preenchendo com valor do campo
                                 tinymce.get('descricao').setContent($('#descricao').val());
                                 tinymce.get('descricao').getBody().setAttribute('contenteditable', true);
+
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').show();
+                                $('#divDocumentosPdfsUpload').show();
+
+                                //NeeDocumentos
+                                neeDocumentos = data.success['neeDocumentos'];
+
+                                montar_grade_documentos_nee(2);
+                            @endif
+
+                            @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
+                            //Verificar se precisa checked resposta_pergunta_1
+                            if (data.success['resposta_pergunta_1'] == 1) {$('#resposta_pergunta_1_1').prop('checked', true);}
+                            if (data.success['resposta_pergunta_1'] == 2) {$('#resposta_pergunta_1_2').prop('checked', true);}
+                            if (data.success['resposta_pergunta_1'] == 3) {$('#resposta_pergunta_1_3').prop('checked', true);}
+
+                            //Verificar se precisa checked resposta_pergunta_2
+                            if (data.success['resposta_pergunta_2'] == 1) {$('#resposta_pergunta_2_1').prop('checked', true);}
+                            if (data.success['resposta_pergunta_2'] == 2) {$('#resposta_pergunta_2_2').prop('checked', true);}
+                            if (data.success['resposta_pergunta_2'] == 3) {$('#resposta_pergunta_2_3').prop('checked', true);}
                             @endif
                             //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                         } else if (data.error_not_found) {
@@ -502,7 +639,7 @@
                         //Confirm Operacao - Create
                         if ($('#frm_operacao').val() == 'create') {
                             //Settings''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
+                            @if($ajaxPrefixPermissaoSubmodulo == 'nees')
                                 //Tinymce - pegando valor e jogando no campo
                                 $('#descricao').val(tinymce.get('descricao').getContent());
                             @endif
@@ -521,6 +658,26 @@
                                 success: function (response) {
                                     //Lendo dados
                                     if (response.success) {
+                                        //Enviar E-mail'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                                        @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
+                                            resposta_pergunta_1 = $("input[type=radio][name=resposta_pergunta_1]:checked").val();
+                                            if (resposta_pergunta_1 == 1) {resposta_pergunta_1 = 'Sim';}
+                                            if (resposta_pergunta_1 == 2) {resposta_pergunta_1 = 'Não';}
+                                            if (resposta_pergunta_1 == 3) {resposta_pergunta_1 = 'Parcialmente';}
+
+                                            resposta_pergunta_2 = $("input[type=radio][name=resposta_pergunta_2]:checked").val();
+                                            if (resposta_pergunta_2 == 1) {resposta_pergunta_2 = 'Sim';}
+                                            if (resposta_pergunta_2 == 2) {resposta_pergunta_2 = 'Não';}
+                                            if (resposta_pergunta_2 == 3) {resposta_pergunta_2 = 'Parcialmente';}
+
+                                            resposta_pergunta_3 = $("#resposta_pergunta_3").val();
+
+                                            usuario = '{{$userLoggedData['name'].' ['.$userLoggedData['email'].']'}}';
+
+                                            $.get("enviar_email/avaliacoes/avaliacao/"+resposta_pergunta_1+"/"+resposta_pergunta_2+"/"+resposta_pergunta_3+"/"+usuario);
+                                        @endif
+                                        //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
                                         alertSwal('success', "{{$ajaxNameSubmodulo}}", response.success, 'true', 2000);
 
                                         //Limpar validações
@@ -590,7 +747,7 @@
                         //Confirm Operacao - Edit
                         if ($('#frm_operacao').val() == 'edit') {
                             //Settings''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                            @if($ajaxPrefixPermissaoSubmodulo == 'deficiencias')
+                            @if($ajaxPrefixPermissaoSubmodulo == 'nees')
                                 //Tinymce - pegando valor e jogando no campo
                                 $('#descricao').val(tinymce.get('descricao').getContent());
                             @endif
@@ -696,7 +853,7 @@
                     $('#crudTable').show();
                 });
 
-                //Configurações'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                //Configurações'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                 //Select2
                 if ($('select').hasClass('select2')) {
@@ -710,7 +867,7 @@
                 if ($('select').hasClass('select2-search-disable')) {
                     $(".select2-search-disable").select2({minimumResultsForSearch:1/0, dropdownParent: $('#crudForm')});
                 }
-                //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             });
         </script>
     @endif

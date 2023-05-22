@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="row">
-        @foreach ($deficiencias as $key => $deficiencia)
+        @foreach ($nees as $key => $nee)
             <div class="col-6 px-3 py-2">
-                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="window.location='{{route('mobile_deficiencias.show', $deficiencia['id'])}}'" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper($deficiencia['name'])}}</button>
+                <button type="button" class="btn btn-dark waves-effect btn-label waves-light font-size-10 col-12 py-3" onclick="window.location='{{route('mobile_nees.show', $nee['id'])}}'" style="height: 65px;"><i class="bx bx-loader label-icon "></i> {{mb_strtoupper($nee['name'])}}</button>
             </div>
         @endforeach
 

@@ -42,51 +42,49 @@
 
                     <!-- Formulário - Form -->
                     <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <fieldset disabled id="fieldsetForm">
-                            <input type="hidden" id="frm_operacao" name="frm_operacao">
-                            <input type="hidden" id="registro_id" name="registro_id">
+                        <input type="hidden" id="frm_operacao" name="frm_operacao">
+                        <input type="hidden" id="registro_id" name="registro_id">
 
-                            <div class="row mt-4">
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="name" name="name" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Descrição</label>
-                                    <input type="text" class="form-control" id="descricao" name="descricao" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">URL</label>
-                                    <input type="text" class="form-control" id="url" name="url" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">
-                                        Ícone
-                                        &nbsp;&nbsp;
-                                        <a href="#" class="texto-primary" data-bs-toggle="modal" data-bs-target="#modalIcons" id="buscarIcones"><i class="mdi mdi-search-web"></i> Buscar</a>
-                                    </label>
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <input type="text" class="form-control" id="icon" name="icon" required="required" readonly>
-                                        </div>
-                                        <div class="col-2"><i class="" id="iconView" style="font-size: 30px;"></i></div>
+                        <div class="row mt-4">
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" name="name" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="descricao" name="descricao" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">URL</label>
+                                <input type="text" class="form-control" id="url" name="url" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">
+                                    Ícone
+                                    &nbsp;&nbsp;
+                                    <a href="#" class="texto-primary" data-bs-toggle="modal" data-bs-target="#modalIcons" id="buscarIcones"><i class="mdi mdi-search-web"></i> Buscar</a>
+                                </label>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" id="icon" name="icon" required="required" readonly>
                                     </div>
-                                </div>
-                                <div class="form-group col-12 col-md-4 pb-3">
-                                    <label class="form-label">Órdem de Visualização</label>
-                                    <input type="text" class="form-control" id="viewing_order" name="viewing_order" required="required">
-                                </div>
-                                <div class="form-group col-12 col-md-6 pb-3 fieldsViewEdit" style="display: none;">
-                                    <label class="form-label">Usuário</label>
-                                    <input type="text" class="form-control" id="fieldUserName" readonly="readonly">
-                                    <input type="hidden" id="user_id" name="user_id">
-                                </div>
-                                <!-- Create -->
-                                <div class="form-group col-12 col-md-3 pb-3 fieldsCreate" style="display: none;">
-                                    <input type="hidden" id="user_id" name="user_id" value="{{ $userLoggedData['id'] }}">
+                                    <div class="col-2"><i class="" id="iconView" style="font-size: 30px;"></i></div>
                                 </div>
                             </div>
-                        </fieldset>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <label class="form-label">Órdem de Visualização</label>
+                                <input type="text" class="form-control" id="viewing_order" name="viewing_order" required="required">
+                            </div>
+                            <div class="form-group col-12 col-md-6 pb-3 fieldsViewEdit" style="display: none;">
+                                <label class="form-label">Usuário</label>
+                                <input type="text" class="form-control" id="fieldUserName" readonly="readonly">
+                                <input type="hidden" id="user_id" name="user_id">
+                            </div>
+                            <!-- Create -->
+                            <div class="form-group col-12 col-md-3 pb-3 fieldsCreate" style="display: none;">
+                                <input type="hidden" id="user_id" name="user_id" value="{{ $userLoggedData['id'] }}">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

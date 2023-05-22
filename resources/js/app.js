@@ -48,6 +48,7 @@ import '../assets_template/libs/datatables/datatables.min.css'
 //import '../assets_template/js/scripts_escolas.js'
 //import '../assets_template/js/scripts_professores.js'
 //import '../assets_template/js/scripts_alunos.js'
+//import '../assets_template/js/scripts_nees.js'
 //import '../assets_template/js/scripts_profiles.js'
 
 //Images

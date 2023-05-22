@@ -3,7 +3,7 @@
 @section('title') Login @endsection
 
 @section('body')
-    <body style="background-color: #2a3042;">
+    <body style="/*background-color: #2a3042;*/">
 @endsection
 
 @section('content')
