@@ -71,6 +71,14 @@
                                     <label class="form-label">Telefone 2</label>
                                     <input type="text" class="form-control mask_phone_with_ddd" id="telefone_2" name="telefone_2">
                                 </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Celular 1</label>
+                                    <input type="text" class="form-control mask_cell_with_ddd" id="celular_1" name="celular_1">
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Celular 2</label>
+                                    <input type="text" class="form-control mask_cell_with_ddd" id="celular_2" name="celular_2">
+                                </div>
                             </div>
 
                             <div class="row pt-4">

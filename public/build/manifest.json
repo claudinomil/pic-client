@@ -388,6 +388,16 @@
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_alunos.js"
     },
+    "resources/assets_template/js/scripts_turmas.js": {
+        "file": "assets/scripts_turmas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_turmas.js"
+    },
+    "resources/assets_template/js/scripts_calendarios_inclusivos.js": {
+        "file": "assets/scripts_calendarios_inclusivos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_calendarios_inclusivos.js"
+    },
     "resources/assets_template/js/scripts_profiles.js": {
         "file": "assets/scripts_profiles.js",
         "isEntry": true,

@@ -611,6 +611,59 @@ function dashboardsProfessores(id) {
 }
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+//Submódulo Calendarios Inclusivos''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+//Função para buscar dados na API (Documentos pdf do calendario para colocar na grade)
+//Paran op (1 view) (2 edit)
+function montar_grade_pdfs_calendario(op) {
+    $.get('calendarios_inclusivos/' + $('#registro_id').val(), function (data) {
+        let calendarioPdfs = data.success['calendarioPdfs'];
+
+        //Montar a grade
+        var linha = '';
+        $.each(calendarioPdfs, function(i, item) {
+            var caminho = window.location.protocol+'//'+window.location.host+'/'+item.caminho;
+
+            linha += '<tr>';
+            linha += '  <th scope="row">'+(i+1)+'</th>';
+            linha += '      <td>'+item.descricao+'</td>';
+            linha += '      <td style="vertical-align:top; white-space:nowrap;">';
+            linha += '          <div class="row">';
+            linha += '              <div class="col-1">';
+            linha += '                  <button type="button" class="btn btn-outline-info text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Documento" onclick="window.open(\''+caminho+'\', \'_blank\');"><i class="fa fa-file-pdf font-size-18"></i></button>';
+            linha += '              </div>';
+
+            //Botão Deletar documento
+            if (op == 2) {
+                linha += '              <div class="col-1">';
+                linha += '                  <button type="button" class="btn btn-outline-danger text-center btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir Documento" onclick="deletar_pdfs_calendario(' + item.id + ');"><i class="fa fa-trash-alt font-size-18"></i></button>';
+                linha += '              </div>';
+            }
+
+            linha += '          </div>';
+            linha += '      </td>';
+            linha += '</tr>';
+        });
+
+        $('#tbodyPdfUpload').html(linha);
+    });
+}
+
+//Função para deletar documento da grade
+function deletar_pdfs_calendario(calendario_inclusivo_pdf_id) {
+    //Confirmação de Delete
+    alertSwalConfirmacao(function (confirmed) {
+        if (confirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "calendarios_inclusivos/deletar_pdf/" + calendario_inclusivo_pdf_id
+            });
+
+            montar_grade_pdfs_calendario(2);
+        }
+    });
+}
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 //Submódulo Alunos''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 //Função para buscar dados na API (Documentos pdf do aluno para colocar na grade)
 //Paran op (1 view) (2 edit)

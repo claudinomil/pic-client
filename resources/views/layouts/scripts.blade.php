@@ -172,6 +172,15 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
+                                //Documentos
+                                $('#tbodyPdfUpload').html('');
+
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').hide();
+                                $('#divDocumentosPdfsUpload').hide();
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
                                 //desmarcar checkboxs nee_id_
                                 $('.cbNeeId').attr('checked', false);
@@ -284,6 +293,17 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').show();
+                                $('#divDocumentosPdfsUpload').hide();
+
+                                //CalendarioPdfs
+                                calendarioPdfs = data.success['calendarioPdfs'];
+
+                                montar_grade_pdfs_calendario(1);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
                                 //desmarcar checkboxs nee_id_
                                 $('.cbNeeId').attr('checked', false);
@@ -450,6 +470,17 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
+                                //Display divDocumentosPdfs
+                                $('#divDocumentosPdfs').show();
+                                $('#divDocumentosPdfsUpload').show();
+
+                                //CalendarioPdfs
+                                calendarioPdfs = data.success['calendarioPdfs'];
+
+                                montar_grade_pdfs_calendario(2);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'alunos')
                                 //desmarcar checkboxs nee_id_
                                 $('.cbNeeId').attr('checked', false);

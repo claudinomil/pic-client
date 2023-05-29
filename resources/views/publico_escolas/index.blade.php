@@ -47,6 +47,10 @@
                                             <input type="text" class="form-control mask_phone_with_ddd" id="telefone" name="telefone">
                                         </div>
                                         <div class="form-group col-12 pb-3">
+                                            <label class="form-label">Celular</label>
+                                            <input type="text" class="form-control mask_cell_with_ddd" id="celular" name="celular">
+                                        </div>
+                                        <div class="form-group col-12 pb-3">
                                             <label class="form-label">E-mail</label>
                                             <input type="email" class="form-control mask_email" id="email" name="email">
                                         </div>

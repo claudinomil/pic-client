@@ -63,9 +63,11 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_tipos_escolas.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_niveis_ensinos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_escolas.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_turmas.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_professores.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_nees.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_alunos.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_calendarios_inclusivos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_users.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_avaliacoes.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
@@ -95,6 +97,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/images/welcome_logo.png', dest: 'assets/images'},
 
                 {src: 'resources/assets_template/pdfs/alunos/pdf.pdf', dest: 'assets/pdfs/alunos'},
+                {src: 'resources/assets_template/pdfs/calendarios_inclusivos/pdf.pdf', dest: 'assets/pdfs/calendarios_inclusivos'},
                 {src: 'resources/assets_template/pdfs/nees/pdf.pdf', dest: 'assets/pdfs/nees'},
             ]
         })
@@ -309,6 +312,11 @@ export default defineConfig({
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_escolas.js"
 // },
+// "resources/assets_template/js/scripts_turmas.js": {
+//     "file": "assets/scripts_turmas.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_turmas.js"
+// },
 // "resources/assets_template/js/scripts_professores.js": {
 //     "file": "assets/scripts_professores.js",
 //     "isEntry": true,
@@ -323,6 +331,11 @@ export default defineConfig({
 //     "file": "assets/scripts_alunos.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_alunos.js"
+// },
+// "resources/assets_template/js/scripts_calendarios_inclusivos.js": {
+//     "file": "assets/scripts_calendarios_inclusivos.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_calendarios_inclusivos.js"
 // },
 // "resources/assets_template/js/scripts_profiles.js": {
 //     "file": "assets/scripts_profiles.js",
