@@ -68,8 +68,10 @@ class Controller extends BaseController
             if (isset($response['content']['niveis_ensinos'])) {$this->niveis_ensinos = $response['content']['niveis_ensinos'];}
             if (isset($response['content']['racas'])) {$this->racas = $response['content']['racas'];}
             if (isset($response['content']['escolas'])) {$this->escolas = $response['content']['escolas'];}
+            if (isset($response['content']['alunos'])) {$this->alunos = $response['content']['alunos'];}
             if (isset($response['content']['professores'])) {$this->professores = $response['content']['professores'];}
             if (isset($response['content']['turmas'])) {$this->turmas = $response['content']['turmas'];}
+            if (isset($response['content']['alunos_turmas_professores'])) {$this->alunos_turmas_professores = $response['content']['alunos_turmas_professores'];}
             if (isset($response['content']['sistema_acessos'])) {$this->sistema_acessos = $response['content']['sistema_acessos'];}
             if (isset($response['content']['nees'])) {$this->nees = $response['content']['nees'];}
         }

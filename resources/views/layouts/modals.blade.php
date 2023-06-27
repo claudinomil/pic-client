@@ -302,9 +302,9 @@
                                                         <h5 class="font-size-15">Escolaridade</h5>
                                                         <p class="text-muted mb-0 text-truncate jsonAlunoEscolaridade"></p>
                                                     </div>
-                                                    <div class="col-6">
-                                                        <h5 class="font-size-15">Gênero</h5>
-                                                        <p class="text-muted mb-0 text-truncate jsonAlunoGenero"></p>
+                                                    <div class="col-6">&nbsp;
+{{--                                                        <h5 class="font-size-15">Gênero</h5>--}}
+{{--                                                        <p class="text-muted mb-0 text-truncate jsonAlunoGenero"></p>--}}
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -352,14 +352,14 @@
                                                 <th scope="row">Name :</th>
                                                 <td class="jsonAlunoName"></td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">E-mail :</th>
-                                                <td class="jsonAlunoEmail"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Admissão :</th>
-                                                <td class="jsonAlunoDataAdmissao"></td>
-                                            </tr>
+{{--                                            <tr>--}}
+{{--                                                <th scope="row">E-mail :</th>--}}
+{{--                                                <td class="jsonAlunoEmail"></td>--}}
+{{--                                            </tr>--}}
+{{--                                            <tr>--}}
+{{--                                                <th scope="row">Admissão :</th>--}}
+{{--                                                <td class="jsonAlunoDataAdmissao"></td>--}}
+{{--                                            </tr>--}}
                                             </tbody>
                                         </table>
                                     </div>

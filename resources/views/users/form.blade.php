@@ -124,7 +124,7 @@
                             </div>
 
                             <div class="row pt-4">
-                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Referência</h5>
+                                <h5 class="pb-4 text-primary"><i class="fas fa-user"></i> Referências</h5>
                                 <div class="form-group col-12 col-md-4 pb-3">
                                     <label class="form-label">Funcionário</label>
                                     <select class="form-control select2" name="funcionario_id" id="funcionario_id">
@@ -132,6 +132,16 @@
 
                                         @foreach ($funcionarios as $key => $funcionario)
                                             <option value="{{ $funcionario['id'] }}">{{ $funcionario['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-4 pb-3">
+                                    <label class="form-label">Professor</label>
+                                    <select class="form-control select2" name="professor_id" id="professor_id">
+                                        <option value="">Selecione...</option>
+
+                                        @foreach ($professores as $key => $professor)
+                                            <option value="{{ $professor['id'] }}">{{ $professor['name'] }}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -52,27 +52,46 @@
                 function tableContent(route) {
                     //Avaliações - Entrar direto no Create''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
-                    //Table Show/Hide
-                    $('#crudTable').hide();
+                        //Table Show/Hide
+                        $('#crudTable').hide();
 
-                    //retirando botão Cancelar
-                    $('.crudFormCancelOperacao').hide();
+                        //retirando botão Cancelar
+                        $('.crudFormCancelOperacao').hide();
 
-                    //Verificar se o usuario já avaliou
-                    $.get("{{$ajaxPrefixPermissaoSubmodulo}}/avaliar/user", function (data) {
-                        if (!data.avaliar_user) {
-                            $('#createNewRecord').trigger('click');
-                        } else {
-                            //Form Show/Hide
-                            $('#crudForm').hide();
+                        //Verificar se o usuario já avaliou
+                        $.get("{{$ajaxPrefixPermissaoSubmodulo}}/avaliar/user", function (data) {
+                            if (!data.avaliar_user) {
+                                $('#createNewRecord').trigger('click');
+                            } else {
+                                //Form Show/Hide
+                                $('#crudForm').hide();
 
-                            //crudAvaliado Show/Hide
-                            $('#crudAvaliado').show();
-                        }
-                    });
+                                //crudAvaliado Show/Hide
+                                $('#crudAvaliado').show();
+                            }
+                        });
 
-                    //Parar a função tableContent
-                    return;
+                        //Parar a função tableContent
+                        return;
+                    @endif
+                    //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+                    //Sobre Produto - não tem tabela''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                    @if($ajaxPrefixPermissaoSubmodulo == 'sobre_produto')
+                        //Buscar dados do Registro
+                        $.get("{{$ajaxPrefixPermissaoSubmodulo}}/1/edit", function (data) {
+                            //Lendo dados
+                            if (data.success) {
+                                //Tinymce - pegando valor e jogando no campo
+                                //$('#descricao').val(tinymce.get('descricao').getContent());
+
+                                $('#divSobreProduto').html(data.success.descricao);
+
+                            }
+                        });
+
+                        //Parar a função tableContent
+                        return;
                     @endif
                     //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -109,12 +128,14 @@
                         serverSide: false,
                         ajax: route,
                         columns: [
-                            @foreach($colsFields as $colField)
-                                {'data': '{{$colField}}'},
-                            @endforeach
+                            @if(isset($colsFields))
+                                @foreach($colsFields as $colField)
+                                    {'data': '{{$colField}}'},
+                                @endforeach
 
-                            @if($colActions == 'yes')
-                                {'data': 'action'}
+                                @if($colActions == 'yes')
+                                    {'data': 'action'}
+                                @endif
                             @endif
                         ]
                     });
@@ -172,6 +193,22 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'espacos_colaboracoes')
+                                //Removendo opções de alunos que não são do Professor logado
+                                $("#aluno_id option[data-professor-id!='{{$userLoggedData['professor_id']}}']").remove();
+
+                                //Removendo opções de professores que não são o Professor logado
+                                $("#professor_id option[value!='{{$userLoggedData['professor_id']}}']").remove();
+
+                                //Colocando data e hora
+                                $('#data').val('{{date('d/m/Y')}}');
+                                $('#hora').val('{{date('H:i:s')}}');
+
+                                //Readonly
+                                $('#data').prop('readonly', true);
+                                $('#hora').prop('readonly', true);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
                                 //Documentos
                                 $('#tbodyPdfUpload').html('');
@@ -206,6 +243,9 @@
 
                                 //Desabilitar/Habilitar opções de Create/Edit
                                 $('.tdCreateEdit').show();
+
+                                //Verificar checked
+                                $('#apenas_alunos_professor_logado').prop('checked', false);
                             @endif
 
                             @if($ajaxPrefixPermissaoSubmodulo == 'ferramentas')
@@ -276,6 +316,12 @@
                             $('select').prop('disabled', true);
                             $('.select2').prop('disabled', true);
 
+                            //Campos do Formulário - disabled true/false (Campos Padrões)
+                            $('#pesquisar_field').prop('disabled', false);
+                            $('#pesquisar_value').prop('disabled', false);
+                            $('.fildFilterTable').prop('disabled', false);
+                            $('.fildLengthTable').prop('disabled', false);
+
                             //Botões do Modal
                             $('#crudFormButtons1').hide();
                             $('#crudFormButtons2').show();
@@ -293,6 +339,9 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'espacos_colaboracoes')
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
                                 //Display divDocumentosPdfs
                                 $('#divDocumentosPdfs').show();
@@ -345,6 +394,9 @@
 
                                 //Desabilitar/Habilitar opções de Create/Edit
                                 $('.tdCreateEdit').hide();
+
+                                //Verificar checked
+                                if (data.success['apenas_alunos_professor_logado'] == 1) {$('#apenas_alunos_professor_logado').prop('checked', true);} else {$('#apenas_alunos_professor_logado').prop('checked', false);}
                             @endif
 
                             @if($ajaxPrefixPermissaoSubmodulo == 'ferramentas')
@@ -470,6 +522,18 @@
                             putMask();
 
                             //Settings'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            @if($ajaxPrefixPermissaoSubmodulo == 'espacos_colaboracoes')
+                                //Removendo opções de alunos que não são do Professor logado
+                                $("#aluno_id option[data-professor-id!='{{$userLoggedData['professor_id']}}']").remove();
+
+                                //Removendo opções de professores que não são o Professor logado
+                                $("#professor_id option[value!='{{$userLoggedData['professor_id']}}']").remove();
+
+                                //Readonly
+                                $('#data').prop('readonly', true);
+                                $('#hora').prop('readonly', true);
+                            @endif
+
                             @if($ajaxPrefixPermissaoSubmodulo == 'calendarios_inclusivos')
                                 //Display divDocumentosPdfs
                                 $('#divDocumentosPdfs').show();
@@ -524,6 +588,9 @@
                                 $.each(data.success, function(i, item) {
                                     $('.create_edit_'+i).prop('checked', true);
                                 });
+
+                                //Verificar checked
+                                if (data.success['apenas_alunos_professor_logado'] == 1) {$('#apenas_alunos_professor_logado').prop('checked', true);} else {$('#apenas_alunos_professor_logado').prop('checked', false);}
                             @endif
 
                             @if($ajaxPrefixPermissaoSubmodulo == 'users')
@@ -555,6 +622,12 @@
                                 neeDocumentos = data.success['neeDocumentos'];
 
                                 montar_grade_documentos_nee(2);
+                            @endif
+
+                            @if($ajaxPrefixPermissaoSubmodulo == 'sobre_produto')
+                                //Tinymce - preenchendo com valor do campo
+                                tinymce.get('descricao').setContent($('#descricao').val());
+                                tinymce.get('descricao').getBody().setAttribute('contenteditable', true);
                             @endif
 
                             @if($ajaxPrefixPermissaoSubmodulo == 'avaliacoes')
@@ -779,6 +852,11 @@
                         if ($('#frm_operacao').val() == 'edit') {
                             //Settings''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                             @if($ajaxPrefixPermissaoSubmodulo == 'nees')
+                                //Tinymce - pegando valor e jogando no campo
+                                $('#descricao').val(tinymce.get('descricao').getContent());
+                            @endif
+
+                            @if($ajaxPrefixPermissaoSubmodulo == 'sobre_produto')
                                 //Tinymce - pegando valor e jogando no campo
                                 $('#descricao').val(tinymce.get('descricao').getContent());
                             @endif

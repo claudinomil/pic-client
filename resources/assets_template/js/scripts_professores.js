@@ -70,22 +70,6 @@ $(document).ready(function () {
                     required: false,
                     dateMethod: true
                 },
-                pessoal_identidade_orgao_id: {
-                    required: false,
-                    idMethod: true
-                },
-                pessoal_identidade_estado_id: {
-                    required: false,
-                    idMethod: true
-                },
-                pessoal_identidade_numero: {
-                    required: false,
-                    numberMethod: true
-                },
-                pessoal_identidade_data_emissao: {
-                    required: false,
-                    dateMethod: true
-                },
                 profissional_identidade_orgao_id: {
                     required: false,
                     idMethod: true

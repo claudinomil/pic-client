@@ -66,8 +66,10 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_turmas.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_professores.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_nees.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_sobre_produto.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_alunos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_calendarios_inclusivos.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_espacos_colaboracoes.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_users.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_avaliacoes.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
@@ -327,10 +329,20 @@ export default defineConfig({
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_nees.js"
 // },
+// "resources/assets_template/js/scripts_sobre_produto.js": {
+//     "file": "assets/scripts_sobre_produto.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_sobre_produto.js"
+// },
 // "resources/assets_template/js/scripts_alunos.js": {
 //     "file": "assets/scripts_alunos.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/scripts_alunos.js"
+// },
+// "resources/assets_template/js/scripts_espacos_colaboracoes.js": {
+//     "file": "assets/scripts_espacos_colaboracoes.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_espacos_colaboracoes.js"
 // },
 // "resources/assets_template/js/scripts_calendarios_inclusivos.js": {
 //     "file": "assets/scripts_calendarios_inclusivos.js",

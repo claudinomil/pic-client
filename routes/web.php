@@ -96,6 +96,12 @@ require __DIR__.'/routes_publico_escolas.php';
 //Calendários Inclusivos
 require __DIR__.'/routes_calendarios_inclusivos.php';
 
+//Espaços Colaborações
+require __DIR__.'/routes_espacos_colaboracoes.php';
+
+//Sobre Produto
+require __DIR__.'/routes_sobre_produto.php';
+
 //Mobile
 require __DIR__.'/routes_mobile.php';
 

@@ -170,36 +170,6 @@
                             <div class="row pt-4">
                                 <h5 class="pb-4 text-primary"><i class="fas fa-paste"></i> Documentos</h5>
                                 <div class="form-group col-12 col-md-3 pb-3">
-                                    <label class="form-label">Identidade Pessoal (Órgão)</label>
-                                    <select class="form-control select2" name="pessoal_identidade_orgao_id" id="pessoal_identidade_orgao_id">
-                                        <option value="">Selecione...</option>
-
-                                        @foreach ($identidade_orgaos as $key => $identidade_orgao)
-                                            <option value="{{ $identidade_orgao['id'] }}">{{ $identidade_orgao['name'] }}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                                <div class="form-group col-12 col-md-3 pb-3">
-                                    <label class="form-label">Identidade Pessoal (Estado)</label>
-                                    <select class="form-control select2" name="pessoal_identidade_estado_id" id="pessoal_identidade_estado_id">
-                                        <option value="">Selecione...</option>
-
-                                        @foreach ($identidade_estados as $key => $identidade_estado)
-                                            <option value="{{ $identidade_estado['id'] }}">{{ $identidade_estado['name'] }}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                                <div class="form-group col-12 col-md-3 pb-3">
-                                    <label class="form-label">Identidade Pessoal (Número)</label>
-                                    <input type="text" class="form-control" id="pessoal_identidade_numero" name="pessoal_identidade_numero">
-                                </div>
-                                <div class="form-group col-12 col-md-3 pb-3">
-                                    <label class="form-label">Identidade Pessoal (Emissão)</label>
-                                    <input type="text" class="form-control mask_date" id="pessoal_identidade_data_emissao" name="pessoal_identidade_data_emissao">
-                                </div>
-                                <div class="form-group col-12 col-md-3 pb-3">
                                     <label class="form-label">Identidade Profissional (Órgão)</label>
                                     <select class="form-control select2" name="profissional_identidade_orgao_id" id="profissional_identidade_orgao_id">
                                         <option value="">Selecione...</option>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Funções @endsection
+@section('title') Funcionários @endsection
 
 @section('css')
 @endsection
@@ -23,7 +23,9 @@
                                 <!-- Botões -->
                                 <div class="col-12 col-md-8 pb-2">
                                     @if (\App\Facades\Permissoes::permissao([$ajaxPrefixPermissaoSubmodulo.'_create'], $userLoggedPermissoes))
-                                        <x-button op="1" id="createNewRecord" />
+                                        @if($userLoggedData['professor_id'] !== null and $userLoggedData['professor_id'] != '')
+                                            <x-button op="1" id="createNewRecord" />
+                                        @endif
                                     @endif
                                 </div>
 
@@ -32,7 +34,7 @@
                                     <div class="row">
                                         <div class="col-5 float-end px-1">
                                             <select class="form-control" id="pesquisar_field" name="pesquisar_field" placeholder="Campo Pesquisar">
-                                                <option value="name">Nome</option>
+                                                <option value="espacos_colaboracoes.evento">Evento</option>
                                             </select>
                                         </div>
                                         <div class="col-5 float-end px-1">
@@ -49,13 +51,13 @@
 
                     <!-- Tabela (Componente Blade) -->
                     @php
-                        $colsNames = ['Nome'];
-                        $colsFields = ['name'];
+                        $colsNames = ['Data/Hora', 'Aluno', 'Professor'];
+                        $colsFields = ['data_hora', 'alunoName', 'professorName'];
                         $colActions = 'yes';
                     @endphp
 
                     <x-table-crud-ajax
-                        :numCols="2"
+                        :numCols="4"
                         :class="'table table-bordered dt-responsive table-striped nowrap w-100 class-datatable-1'"
                         :colsNames=$colsNames
                         :colsFields=$colsFields
@@ -67,10 +69,13 @@
 </div>
 
 <!-- Modal -->
-@include('funcoes.form')
+@include('espacos_colaboracoes.form')
 @endsection
 
 @section('script')
-    <!-- scripts_funcoes.js -->
-    <script src="{{ Vite::asset('resources/assets_template/js/scripts_funcoes.js')}}"></script>
+    <!-- scripts_espacos_colaboracoes.js -->
+    <script src="{{ Vite::asset('resources/assets_template/js/scripts_espacos_colaboracoes.js')}}"></script>
+@endsection
+
+@section('script-bottom')
 @endsection

@@ -149,6 +149,17 @@
                                 </table>
                             </div>
                         </div>
+
+                        <div class="row mt-4">
+                            <h6 class="text-success pb-2"><b>::</b> Outras permissões condicionadas as permissões acima</h6>
+                            <div class="form-group col-12 col-md-4 pb-3">
+                                <div class="form-check form-checkbox-outline form-check-danger">
+                                    <input class="form-check-input" type="checkbox" id="apenas_alunos_professor_logado" name="apenas_alunos_professor_logado">
+                                    <label class="form-check-label" for="apenas_alunos_professor_logado">Apenas Alunos Professor Logado</label>
+                                </div>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

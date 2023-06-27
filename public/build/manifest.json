@@ -373,6 +373,11 @@
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_escolas.js"
     },
+    "resources/assets_template/js/scripts_turmas.js": {
+        "file": "assets/scripts_turmas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_turmas.js"
+    },
     "resources/assets_template/js/scripts_professores.js": {
         "file": "assets/scripts_professores.js",
         "isEntry": true,
@@ -383,15 +388,20 @@
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_nees.js"
     },
+    "resources/assets_template/js/scripts_sobre_produto.js": {
+        "file": "assets/scripts_sobre_produto.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_sobre_produto.js"
+    },
     "resources/assets_template/js/scripts_alunos.js": {
         "file": "assets/scripts_alunos.js",
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_alunos.js"
     },
-    "resources/assets_template/js/scripts_turmas.js": {
-        "file": "assets/scripts_turmas.js",
+    "resources/assets_template/js/scripts_espacos_colaboracoes.js": {
+        "file": "assets/scripts_espacos_colaboracoes.js",
         "isEntry": true,
-        "src": "resources/assets_template/js/scripts_turmas.js"
+        "src": "resources/assets_template/js/scripts_espacos_colaboracoes.js"
     },
     "resources/assets_template/js/scripts_calendarios_inclusivos.js": {
         "file": "assets/scripts_calendarios_inclusivos.js",

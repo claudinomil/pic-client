@@ -33,8 +33,6 @@
                                         <div class="col-5 float-end px-1">
                                             <select class="form-control" id="pesquisar_field" name="pesquisar_field" placeholder="Campo Pesquisar">
                                                 <option value="professores.name">Nome</option>
-                                                <option value="professores.identidade">Identidade</option>
-                                                <option value="identidade_orgaos.name">Órgão Identidade</option>
                                                 <option value="professores.cpf">CPF</option>
                                                 <option value="generos.name">Gênero</option>
                                                 <option value="estados_civis.name">Estado Civil</option>

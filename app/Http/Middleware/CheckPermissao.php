@@ -48,6 +48,8 @@ class CheckPermissao
         if (isset($response['content'])) {
             $userLoggedData = $response['content']['userData']; //Dados do Usuário Logado
             $userLoggedPermissoes = $response['content']['userPermissoes']; //Permissões do Usuário Logado
+            $userLoggedPermissao_apenas_alunos_professor_logado = $response['content']['userPermissao_apenas_alunos_professor_logado'][0]['apenas_alunos_professor_logado']; //Outra Permissão do Usuário Logado
+            $userLoggedProfessor_alunos = $response['content']['userLoggedProfessor_alunos']; //Alunos do Usuário Logado com referência a um Professor
             $userLoggedMenuModulos = $response['content']['menuModulos']; //Módulos Menu
             $userLoggedMenuSubmodulos = $response['content']['menuSubmodulos']; // Submódulos Menu
             $userLoggedFerramentas = $response['content']['ferramentas']; //Ferramentas
@@ -81,6 +83,8 @@ class CheckPermissao
         $request['userLoggedData'] = $userLoggedData;
         $request['userLoggedPermissoes'] = $userLoggedPermissoes;
         $request['ajaxPrefixPermissaoSubmodulo'] = $ajaxPrefixPermissaoSubmodulo;
+        $request['userLoggedPermissao_apenas_alunos_professor_logado'] = $userLoggedPermissao_apenas_alunos_professor_logado;
+        $request['userLoggedProfessor_alunos'] = $userLoggedProfessor_alunos;
 
         //Gravar as Sessões de Breadcrumb
         Breadcrumb::sessionsBreadcrumb();
@@ -90,6 +94,7 @@ class CheckPermissao
             'controllerMethod' => $controllerMethod,
             'userLoggedData' => $userLoggedData,
             'userLoggedPermissoes' => $userLoggedPermissoes,
+            'userLoggedPermissao_apenas_alunos_professor_logado' => $userLoggedPermissao_apenas_alunos_professor_logado,
             'userLoggedMenuModulos' => $userLoggedMenuModulos,
             'userLoggedMenuSubmodulos' => $userLoggedMenuSubmodulos,
             'userLoggedFerramentas' => $userLoggedFerramentas,
