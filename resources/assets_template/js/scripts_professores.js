@@ -63,7 +63,7 @@ $(document).ready(function () {
                     idMethod: true
                 },
                 data_admissao: {
-                    required: true,
+                    required: false,
                     dateMethod: true
                 },
                 data_demissao: {
@@ -87,7 +87,7 @@ $(document).ready(function () {
                     dateMethod: true
                 },
                 cpf: {
-                    required: true,
+                    required: false,
                     cpfMethod: true
                 },
                 pis: {

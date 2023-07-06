@@ -782,6 +782,16 @@
                                         @endif
                                         //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+                                        //Enviar E-mail'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                                        @if($ajaxPrefixPermissaoSubmodulo == 'users')
+                                            email = $("#email").val();
+                                            senha = response.content;
+                                            senha = senha.substring(4, 14);
+
+                                            $.get("enviar_email/users/primeiro_acesso/"+email+"/"+senha);
+                                        @endif
+                                        //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
                                         alertSwal('success', "{{$ajaxNameSubmodulo}}", response.success, 'true', 2000);
 
                                         //Limpar validações

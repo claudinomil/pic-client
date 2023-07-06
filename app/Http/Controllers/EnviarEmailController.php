@@ -34,4 +34,13 @@ class EnviarEmailController extends Controller
             $message->subject('Avalie-nos - Avaliação do Usuário '.$usuario);
         });
     }
+
+    public function primeiro_acesso($email, $senha)
+    {
+        //Enviando e-mail
+        Mail::send('emails.primeiro_acesso', ['email' => $email, 'senha' => $senha], function ($message) use($email) {
+            $message->to($email);
+            $message->subject('PrimeiroAcesso');
+        });
+    }
 }

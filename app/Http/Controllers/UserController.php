@@ -99,7 +99,7 @@ class UserController extends Controller
 
             //Registro criado com sucesso
             if ($this->code == 2010) {
-                return response()->json(['success' => $this->message]);
+                return response()->json(['success' => $this->message, 'content' => $this->content]);
             } else if ($this->code == 2020) { //Falha na validação dos dados
                 return response()->json(['error_validation' => $this->validation]);
             } else {

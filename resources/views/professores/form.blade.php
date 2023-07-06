@@ -201,7 +201,7 @@
                                 </div>
                                 <div class="form-group col-12 col-md-3 pb-3">
                                     <label class="form-label">CPF</label>
-                                    <input type="text" class="form-control mask_cpf" id="cpf" name="cpf" required="required">
+                                    <input type="text" class="form-control mask_cpf" id="cpf" name="cpf">
                                 </div>
                                 <div class="form-group col-12 col-md-3 pb-3">
                                     <label class="form-label">PIS</label>
