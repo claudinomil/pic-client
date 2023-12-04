@@ -357,12 +357,6 @@ function chat_elemento_visivel(elem) {
     return elemTop >= windowTop && elemBottom <= windowBottom;
 }
 
-
-
-
-
-
-
 function chat_gravar_como_recebidas() {
     $.get("chat/gravar_como_recebidas", function (data) {});
 }
