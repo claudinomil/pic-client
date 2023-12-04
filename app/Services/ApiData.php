@@ -53,7 +53,8 @@ class ApiData
             //Direto para uma url enviada pela variavel $submodulo : GET
             if ($type == 10) {
                 $response = $httpHeaders->get($submodulo);
-                dd($response->json());
+
+                if ($submodulo == 'chat/usuario_logado') {dd($response->json());}
             }
 
             //Direto para uma url enviada pela variavel $submodulo + Request : PUT
