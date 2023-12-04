@@ -14,8 +14,8 @@ class ChatController extends Controller
 
     public function usuario_logado(Request $request)
     {
-//        //Requisição Ajax
-//        if ($request->ajax()) {
+        //Requisição Ajax
+        if ($request->ajax()) {
             //Buscando dados Api_Data() - Usuário Logado
             $this->responseApi(1, 10, 'chat/usuario_logado', '', '', '', '');
 
@@ -25,7 +25,7 @@ class ChatController extends Controller
             } else {
                 return response()->json(['error' => 'Usuário logado não foi encontrado']);
             }
-//        }
+        }
     }
 
     public function novas_conversas(Request $request)
