@@ -22,6 +22,8 @@ class Controller extends BaseController
     {
         //Buscando dados Api_Data()
         $response = ApiData::getData($type, $uri, $id, $search_field, $search_value, $request);
+
+        if ($uri == 'chat/usuario_logado') {dd($response->json());}
         //dd($response->json());   //TRAZER ERRO NA DEPURAÇÃO
 
         //if ($uri == 'users/user/logged/data') {dd($response->json());}
