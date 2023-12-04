@@ -22,7 +22,7 @@ class Controller extends BaseController
     {
         //Buscando dados Api_Data()
         $response = ApiData::getData($type, $uri, $id, $search_field, $search_value, $request);
-        dd($response->json());   //TRAZER ERRO NA DEPURAÇÃO
+        //dd($response->json());   //TRAZER ERRO NA DEPURAÇÃO
 
         //if ($uri == 'users/user/logged/data') {dd($response->json());}
 
