@@ -19,8 +19,6 @@ class ChatController extends Controller
             //Buscando dados Api_Data() - Usuário Logado
             $this->responseApi(1, 10, 'chat/usuario_logado', '', '', '', '');
 
-            //dd($this->content);
-
             //Dados recebido com sucesso
             if ($this->code == 2000) {
                 return response()->json(['success' => $this->content]);

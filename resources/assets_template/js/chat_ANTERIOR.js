@@ -135,6 +135,7 @@ function chat_novas_conversas() {
 function chat_montar_conversas() {
     chat_conversas().then(resultado => {
         $("#chatConversas").animate({scrollTop:0}, 'slow');
+        chat_gravar_como_lida();
     }).catch(function(error) {
         alert(error);
     });
@@ -163,6 +164,8 @@ function chat_conversas() {
                     var conversa_mensagem = item.mensagem;
                     var conversa_data_envio = item.data_envio;
                     var conversa_hora_envio = item.hora_envio;
+                    var conversa_data_recebimento = item.data_recebimento;
+                    var conversa_hora_recebimento = item.hora_recebimento;
                     var conversa_data_leitura = item.data_leitura;
                     var conversa_hora_leitura = item.hora_leitura;
 
@@ -183,7 +186,7 @@ function chat_conversas() {
                     conversas += '  <div class="col-sm-12 message-main-'+conversa_class+'">';
                     conversas += '      <div class="'+conversa_class+'">';
                     conversas += '          <div class="message-text">'+conversa_mensagem+'</div>';
-                    conversas += '          <span class="message-time pull-right">'+''+'</span>';
+                    conversas += '          <span class="message-time pull-right" style="font-size: 10px !important;">'+conversa_data_envio+' '+conversa_hora_envio+'</span>';
                     conversas += '      </div>';
                     conversas += '  </div>';
                     conversas += '</div>';
@@ -211,11 +214,19 @@ function chat_montar_destinatario(op, destinatario_user_id, avatar, name) {
 
     $("#destinatario_user_id").val(destinatario_user_id);
 
+    //Se veio do Iniciar Conversas
+    if (op == 1) {
+        $("#chatDestinatarioFoto").hide();
+    } else {
+        $("#chatDestinatarioFoto").show();
+    }
+
     //Se veio da Novas Conversas fechar o SlideBar
     if (op == 3) {$("#chatNovaConversaFechar").trigger('click');}
 
     chat_montar_conversas();
     chat_gravar_como_lida();
+    chat_gravar_como_recebidas();
     chat_montar_ultimas_conversas();
 }
 
@@ -286,6 +297,7 @@ function chat_enviar_mensagem() {
             if (response.success) {
                 chat_montar_conversas();
                 chat_gravar_como_lida();
+                chat_gravar_como_recebidas();
                 chat_montar_ultimas_conversas();
             } else {
                 alert('Erro interno');
@@ -298,7 +310,7 @@ function chat_enviar_mensagem() {
     });
 }
 
-function chat_gravar_como_lida() {
+function chat_gravar_como_lida_ANTERIOR() {
     var scrool_heigh = $("#chatConversas").height();
     var acerto = $("#chatConversas").offset().top - 30;
 
@@ -315,6 +327,38 @@ function chat_gravar_como_lida() {
             chat_montar_ultimas_conversas();
         }
     });
+}
+
+function chat_gravar_como_lida() {
+    $(".conversa_nao_lida").each(function(index) {
+        //Pegando elemento
+        var elemento = $(this);
+
+        //Verificar se o elemento já está visível
+        if (chat_elemento_visivel(elemento)) {
+            $(this).removeClass('conversa_nao_lida');
+
+            var chat_id = $(this).data('chat_id');
+
+            $.get("chat/gravar_como_lida/"+chat_id, function (data) {});
+
+            chat_montar_ultimas_conversas();
+        }
+    });
+}
+
+function chat_elemento_visivel(elem) {
+    var $elem = $(elem);
+    var windowTop = $(window).scrollTop();
+    var windowBottom = windowTop + $(window).height();
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return elemTop >= windowTop && elemBottom <= windowBottom;
+}
+
+function chat_gravar_como_recebidas() {
+    $.get("chat/gravar_como_recebidas", function (data) {});
 }
 
 $(function() {
@@ -369,10 +413,6 @@ $(function() {
         if (key == 13) {
             e.preventDefault();
 
-            // var mensagem = $("#chatEnviarMensagem").val();
-            //
-            // $("#chatTextareaEnviarMensagem").val('');
-
             chat_enviar_mensagem();
         }
     });
@@ -383,7 +423,12 @@ $(function() {
     });
 
     //Scrool do #charConversas
-    $("#chatConversas").on("scroll", function() {
+    $("#chatConversas").on("scroll resize", function() {
+        chat_gravar_como_lida();
+    });
+
+    //Alterou tamanho da tela
+    $(window).on('scroll resize', function() {
         chat_gravar_como_lida();
     });
 });
