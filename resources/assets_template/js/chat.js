@@ -363,10 +363,10 @@ $(function() {
     //Abrir Modal do Chat (#chatModal)
     $("#chatIniciar").click(function() {
         //Montar Usuário Logado
-        chat_usuario_logado();
+        //chat_usuario_logado();
         $("#chatModal").modal('show');
-        chat_montar_destinatario(1, 0, '', '');
-        chat_montar_ultimas_conversas();
+        //chat_montar_destinatario(1, 0, '', '');
+        //chat_montar_ultimas_conversas();
     });
 
     //Mostrar Sidebar Esquerda com novos usuários
