@@ -770,6 +770,27 @@ function deletar_documentos_nee(nee_documento_id) {
 }
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+/*
+* Data Formatada
+* @PARAM op=1 : retorna 9999-99-99
+* @PARAM op=2 : retorna 99/99/9999
+ */
+function dataAtualFormatada(op=1) {
+    var data = new Date(),
+        dia  = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = data.getFullYear();
+
+    var data = '';
+
+    if (op == 1) {data = anoF+'-'+mesF+'-'+diaF;}
+    if (op == 2) {data = diaF+'/'+mesF+'/'+anoF;}
+
+    return data;
+}
+
 //Funções para Api ViaCep Para rodar em formulario sem REPEATER (Inicio)''''''''''''''''''''''''''''''''''''''''''''''''
 
 //FORMULARIO COM CAMPOS SIMPLES'''''''''''''''''''''''''''''''''''''''''''''

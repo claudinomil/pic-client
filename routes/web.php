@@ -102,6 +102,9 @@ require __DIR__.'/routes_espacos_colaboracoes.php';
 //Sobre Produto
 require __DIR__.'/routes_sobre_produto.php';
 
+//Chat
+require __DIR__.'/routes_chat.php';
+
 //Mobile
 require __DIR__.'/routes_mobile.php';
 

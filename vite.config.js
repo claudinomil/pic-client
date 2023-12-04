@@ -19,6 +19,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/css/app.css', dest: 'assets'},
                 {src: 'resources/assets_template/css/bootstrap-dark.css', dest: 'assets'},
                 {src: 'resources/assets_template/css/app-dark.css', dest: 'assets'},
+                {src: 'resources/assets_template/css/chat.css', dest: 'assets'},
 
                 {src: 'resources/assets_template/libs/jquery/jquery.min.js', dest: 'assets'},
                 {src: 'resources/assets_template/libs/bootstrap/bootstrap.min.js', dest: 'assets'},
@@ -74,6 +75,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_avaliacoes.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_profiles.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_logos.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/chat.js', dest: 'assets'},
                 {src: 'resources/assets_template/images/alunos/aluno-0.png', dest: 'assets/images/alunos'},
                 {src: 'resources/assets_template/images/funcionarios/funcionario-0.png', dest: 'assets/images/funcionarios'},
                 {src: 'resources/assets_template/images/professores/professor-0.png', dest: 'assets/images/professores'},
@@ -94,6 +96,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/images/image_logo_pic.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_relatorio.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/image_logo_email.png', dest: 'assets/images'},
+                {src: 'resources/assets_template/images/image_logo_chat.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/megamenu-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/profile-img.png', dest: 'assets/images'},
                 {src: 'resources/assets_template/images/welcome_logo.png', dest: 'assets/images'},
@@ -358,4 +361,9 @@ export default defineConfig({
 //     "file": "assets/scripts_logos.js",
 //         "isEntry": true,
 //         "src": "resources/assets_template/js/scripts_logos.js"
+// },
+// "resources/assets_template/js/chat.js": {
+//     "file": "assets/chat.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/chat.js"
 // },

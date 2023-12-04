@@ -7,6 +7,9 @@
 <!-- functions.js -->
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/functions.js') }}"></script>
 
+<!-- chat.js -->
+<script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/chat.js') }}"></script>
+
 <!-- scripts_profiles.js -->
 <script type="text/javascript" src="{{ Vite::asset('resources/assets_template/js/scripts_profiles.js') }}"></script>
 

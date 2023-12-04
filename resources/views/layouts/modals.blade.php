@@ -686,4 +686,110 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Chat -->
+    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="#chatModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="row app-one">
+                        <div class="col-sm-3 side">
+                            <div class="side-one">
+                                <div class="row heading">
+                                    <div class="col-sm-2 col-xs-2 heading-avatar">
+                                        <div class="heading-avatar-icon" id="chatUserLogadoFoto">
+                                            <img src="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-7 heading-dot pull-right" id="chatUserLogadoDescricao">
+                                        <span class="descricao_nome"></span>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2 heading-compose pull-right" id="chatNovaConversa">
+                                        <i class="fa fa-comments fa-2x pull-right" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="row searchBox">
+                                    <div class="col-sm-12 searchBox-inner">
+                                        <div class="form-group">
+                                            <input id="chatProcurarConversa" type="text" class="form-control" name="chatProcurarConversa" placeholder="Procurar conversa">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row sideBar" id="chatUltimasConversas">&nbsp;</div>
+                            </div>
+                            <div class="side-two">
+                                <div class="row newMessage-heading">
+                                    <div class="row newMessage-main">
+                                        <div class="col-sm-2 col-xs-2 newMessage-back" id="chatNovaConversaFechar">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </div>
+                                        <div class="col-sm-10 col-xs-10">
+                                            <img src="{{ asset('build/assets/images/image_logo_chat.png') }}" class="col-12" width="100%">
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 text-center font-size-22">Nova conversa</div>
+                                    </div>
+                                </div>
+                                <div class="row composeBox">
+                                    <div class="col-sm-12 composeBox-inner">
+                                        <div class="form-group">
+                                            <input id="chatProcurarNovaConversa" type="text" class="form-control" name="chatProcurarNovaConversa" placeholder="Procurar nova conversa">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row compose-sideBar" id="chatNovasConversas">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 conversation">
+                            <div class="row heading">
+                                <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+                                    <div class="heading-avatar-icon" id="chatDestinatarioFoto">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-xs-7 heading-name" id="chatDestinatarioDescricao">
+                                    <div class="heading-name-meta descricao_nome">&nbsp;</div>
+                                    <span class="heading-online descricao_online">&nbsp;</span>
+                                </div>
+                                <div class="col-sm-2 col-xs-2 heading-dot pull-right">&nbsp;</div>
+                                <div class="col-sm-1 col-xs-1 heading-dot pull-right">
+                                    <i class="fa fa-ellipsis-v fa-2x pull-right dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#" id="chatEncerrar">Sair</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row message" id="chatConversas">
+{{--                                <div class="row message-previous">--}}
+{{--                                    <div class="col-sm-12 previous">--}}
+{{--                                        <a onclick="previous(this)" id="ankitjain28" name="20">--}}
+{{--                                            Show Previous Message!--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                            </div>
+
+
+                            <form method="post" id="frm_chat">
+                                @csrf
+                                @method('POST')
+
+                                <input type="hidden" id="remetente_user_id" name="remetente_user_id" value="0">
+                                <input type="hidden" id="destinatario_user_id" name="destinatario_user_id" value="0">
+                                <input type="hidden" id="mensagem" name="mensagem" value="">
+
+                                <div class="row reply">
+                                    <div class="col-sm-11 col-xs-11 reply-main">
+                                        <textarea class="form-control" rows="1" id="chatTextareaEnviarMensagem" name="chatTextareaEnviarMensagem"></textarea>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1 reply-send" id="chatButtonEnviarMensagem">
+                                        <i class="fas fa-location-arrow fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
