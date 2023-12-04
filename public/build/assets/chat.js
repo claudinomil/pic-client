@@ -1,17 +1,15 @@
 function chat_usuario_logado() {
-    return new Promise((resolve, reject) => {
-        $.get("chat/usuario_logado", function (data) {
-            if (data.success) {
-                $("#chatUserLogadoFoto img").attr('src', data.success.avatar);
-                $("#chatUserLogadoDescricao .descricao_nome").html(data.success.name);
+    $.get("chat/usuario_logado", function (data) {
+        if (data.success) {
+            $("#chatUserLogadoFoto img").attr('src', data.success.avatar);
+            $("#chatUserLogadoDescricao .descricao_nome").html(data.success.name);
 
-                $("#remetente_user_id").val(data.success.id);
+            $("#remetente_user_id").val(data.success.id);
 
-                resolve();
-            } else {
-                reject('Não encontrou o usuário logado');
-            }
-        });
+            // resolve();
+        } else {
+            // reject('Não encontrou o usuário logado');
+        }
     });
 }
 
@@ -357,12 +355,6 @@ function chat_elemento_visivel(elem) {
     return elemTop >= windowTop && elemBottom <= windowBottom;
 }
 
-
-
-
-
-
-
 function chat_gravar_como_recebidas() {
     $.get("chat/gravar_como_recebidas", function (data) {});
 }
@@ -371,13 +363,8 @@ $(function() {
     //Abrir Modal do Chat (#chatModal)
     $("#chatIniciar").click(function() {
         //Montar Usuário Logado
-        chat_usuario_logado().then(resultado => {
-            $("#chatModal").modal('show');
-        }).catch(function(error) {
-            alert(error);
-            return false;
-        });
-
+        chat_usuario_logado();
+        $("#chatModal").modal('show');
         chat_montar_destinatario(1, 0, '', '');
         chat_montar_ultimas_conversas();
     });
