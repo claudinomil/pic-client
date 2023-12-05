@@ -20,7 +20,7 @@ function mensagens_montar_destinatario(op, destinatario_user_id, avatar, name) {
     //Se veio da Novas Conversas fechar o SlideBar
     if (op == 3) {$("#mensagensNovaConversaFechar").trigger('click');}
 
-    mensagens_montar_conversas();
+    //mensagens_montar_conversas();
     // mensagens_gravar_como_lida();
     // mensagens_gravar_como_recebidas();
     mensagens_ultimas_conversas();
@@ -94,7 +94,7 @@ function mensagens_enviar_mensagem() {
                 mensagens_montar_conversas();
                 // mensagens_gravar_como_lida();
                 // mensagens_gravar_como_recebidas();
-                mensagens_ultimas_conversas();
+                //mensagens_ultimas_conversas();
             } else {
                 alert('Erro interno');
             }
@@ -443,24 +443,7 @@ $(document).ready(function () {
 
 
 
-function mensagens_gravar_como_lida_ANTERIOR() {
-    var scrool_heigh = $("#mensagensConversas").height();
-    var acerto = $("#mensagensConversas").offset().top - 30;
 
-    $(".conversa_nao_lida").each(function(index) {
-        var conversa_nao_lida_top = $(this).offset().top;
-
-        if ((conversa_nao_lida_top - acerto) < scrool_heigh) {
-            $(this).removeClass('conversa_nao_lida');
-
-            var mensagens_id = $(this).data('mensagens_id');
-
-            $.get("mensagens/gravar_como_lida/"+mensagens_id, function (data) {});
-
-            mensagens_montar_ultimas_conversas();
-        }
-    });
-}
 
 function mensagens_gravar_como_lida() {
     $(".conversa_nao_lida").each(function(index) {
