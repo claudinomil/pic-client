@@ -363,11 +363,6 @@ export default defineConfig({
 //         "isEntry": true,
 //         "src": "resources/assets_template/js/scripts_logos.js"
 // },
-// "resources/assets_template/js/chat.js": {
-//     "file": "assets/chat.js",
-//     "isEntry": true,
-//     "src": "resources/assets_template/js/chat.js"
-// },
 // "resources/assets_template/js/scripts_mensagens.js": {
 //     "file": "assets/scripts_mensagens.js",
 //     "isEntry": true,

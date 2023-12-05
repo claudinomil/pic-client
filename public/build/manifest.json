@@ -129,7 +129,7 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-69b6d8d9.css",
+    "file": "assets/app-0befd6b6.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -162,13 +162,12 @@
       "assets/dripicons-v2-2c1ce9e2.svg"
     ],
     "css": [
-      "assets/app-69b6d8d9.css"
+      "assets/app-0befd6b6.css"
     ],
-    "file": "assets/app-b64c75d1.js",
+    "file": "assets/app-bff0b85e.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
-
     "resources/assets_template/images/image_favicon.png": {
         "file": "assets/image_favicon.png",
         "isEntry": true,
@@ -418,11 +417,6 @@
         "file": "assets/scripts_logos.js",
         "isEntry": true,
         "src": "resources/assets_template/js/scripts_logos.js"
-    },
-    "resources/assets_template/js/chat.js": {
-        "file": "assets/chat.js",
-        "isEntry": true,
-        "src": "resources/assets_template/js/chat.js"
     },
     "resources/assets_template/js/scripts_mensagens.js": {
         "file": "assets/scripts_mensagens.js",
