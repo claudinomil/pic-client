@@ -50,6 +50,7 @@ export default defineConfig({
                 {src: 'resources/assets_template/js/scripts_departamentos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_funcionarios.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_generos.js', dest: 'assets'},
+                {src: 'resources/assets_template/js/scripts_mensagens.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_grupos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_identidade_orgaos.js', dest: 'assets'},
                 {src: 'resources/assets_template/js/scripts_estados_civis.js', dest: 'assets'},
@@ -366,4 +367,9 @@ export default defineConfig({
 //     "file": "assets/chat.js",
 //     "isEntry": true,
 //     "src": "resources/assets_template/js/chat.js"
+// },
+// "resources/assets_template/js/scripts_mensagens.js": {
+//     "file": "assets/scripts_mensagens.js",
+//     "isEntry": true,
+//     "src": "resources/assets_template/js/scripts_mensagens.js"
 // },

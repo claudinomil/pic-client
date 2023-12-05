@@ -1,0 +1,655 @@
+/*
+ * https://www.bootdey.com/snippets/view/Whatsapp-web-chat-template
+ * claudinomoraes@yahoo.com.br
+ * claudino1971
+ */
+
+/*#indexMensagens span {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*#indexMensagens .app {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    top: 19px;*/
+/*    height: calc(100% - 38px);*/
+/*    margin: auto;*/
+/*    padding: 0;*/
+/*    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);*/
+/*}*/
+
+#indexMensagens .app-one {
+    background-color: #f7f7f7;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+#indexMensagens .side {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#indexMensagens .side-one {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    display: block;
+    top: 0;
+}
+
+#indexMensagens .side-two {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    top: -100%;
+    left: -100%;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+}
+
+
+#indexMensagens .heading {
+    padding: 10px 16px 10px 15px;
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #eee;
+    z-index: 1000;
+}
+
+#indexMensagens .heading-avatar {
+    padding: 0;
+    cursor: pointer;
+
+}
+
+#indexMensagens .heading-avatar-icon img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#indexMensagens .heading-name {
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+#indexMensagens .heading-name-meta {
+    font-weight: 700;
+    font-size: 100%;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    display: block;
+}
+
+#indexMensagens .heading-online {
+    display: none;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #93918f;
+}
+
+#indexMensagens .heading-compose {
+    padding: 0;
+}
+
+#indexMensagens .heading-compose i {
+    text-align: center;
+    padding: 5px;
+    color: #93918f;
+    cursor: pointer;
+}
+
+#indexMensagens .heading-dot {
+    padding: 0;
+    margin-left: 10px;
+}
+
+#indexMensagens .heading-dot i {
+    text-align: right;
+    padding: 5px;
+    color: #93918f;
+    cursor: pointer;
+}
+
+#indexMensagens .searchBox {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 60px;
+    width: 100%;
+}
+
+#indexMensagens .searchBox-inner {
+    height: 100%;
+    width: 100%;
+    padding: 10px !important;
+    background-color: #fbfbfb;
+}
+
+
+/*#searchBox-inner input {
+  box-shadow: none;
+}*/
+
+#indexMensagens .searchBox-inner input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#indexMensagens .sideBar {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff;
+    overflow-y: auto;
+    border: 1px solid #f7f7f7;
+    height: calc(100% - 120px);
+}
+
+#indexMensagens .sideBar-body {
+    position: relative;
+    padding: 10px !important;
+    border-bottom: 1px solid #f7f7f7;
+    height: 72px;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+#indexMensagens .sideBar-body:hover {
+    background-color: #f2f2f2;
+}
+
+#indexMensagens .sideBar-avatar {
+    text-align: center;
+    padding: 0 !important;
+}
+
+#indexMensagens .avatar-icon img {
+    border-radius: 50%;
+    height: 49px;
+    width: 49px;
+}
+
+#indexMensagens .sideBar-main {
+    padding: 0 !important;
+}
+
+#indexMensagens .sideBar-main .row {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#indexMensagens .sideBar-name {
+    padding: 10px !important;
+}
+
+#indexMensagens .name-meta {
+    font-size: 100%;
+    padding: 1% !important;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+
+#indexMensagens .sideBar-time {
+    padding: 10px !important;
+}
+
+#indexMensagens .time-meta {
+    text-align: right;
+    font-size: 10px;
+    padding: 1% !important;
+    color: rgba(0, 0, 0, .4);
+    vertical-align: baseline;
+}
+
+#indexMensagens .qtdmsg-meta {
+    text-align: center;
+    font-size: 10px;
+    padding: 3px !important;
+    background-color: #1c6ca1;
+    color: #ffffff;
+    vertical-align: baseline;
+}
+
+/*New Message*/
+
+#indexMensagens .newMessage {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
+    position: relative;
+    left: -100%;
+}
+#indexMensagens .newMessage-heading {
+    padding: 10px 16px 10px 15px !important;
+    margin: 0 !important;
+    height: 100px;
+    width: 100%;
+    background-color: #00bfa5;
+    z-index: 1001;
+}
+
+#indexMensagens .newMessage-main {
+    /*padding: 10px 16px 0 15px !important;*/
+    /*margin: 0 !important;*/
+    /*height: 60px;*/
+    /*margin-top: 30px !important;*/
+    width: 100%;
+    z-index: 1001;
+    color: #fff;
+}
+
+#indexMensagens .newMessage-title {
+    /*font-size: 16px;*/
+    /*font-weight: 400;*/
+    /*!*padding: 10px 5px !important;*!*/
+    /*padding-top: 20px !important;*/
+}
+
+#indexMensagens .newMessage-back {
+    /*text-align: center;*/
+    /*vertical-align: baseline;*/
+    /*!*padding: 12px 5px !important;*!*/
+    /*padding-top: 20px !important;*/
+    /*display: block;*/
+    cursor: pointer;
+    font-size: 22px;
+}
+#indexMensagens .newMessage-back i {
+    /*margin: auto !important;*/
+    /*font-size: 16px;*/
+}
+
+#indexMensagens .composeBox {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 60px;
+    width: 100%;
+}
+
+#indexMensagens .composeBox-inner {
+    height: 100%;
+    width: 100%;
+    padding: 10px !important;
+    background-color: #fbfbfb;
+}
+
+#indexMensagens .composeBox-inner input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#indexMensagens .compose-sideBar {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff;
+    overflow-y: auto;
+    border: 1px solid #f7f7f7;
+    height: calc(100% - 160px);
+}
+
+/*Conversation*/
+
+#indexMensagens .conversation {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
+    /*width: 100%;*/
+    border-left: 1px solid rgba(0, 0, 0, .08);
+    /*overflow-y: auto;*/
+}
+
+#indexMensagens #mensagensConversas {
+    /*overflow-y: scroll !important;*/
+}
+
+#indexMensagens .message {
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background-size: cover;
+    overflow-y: auto;
+    border: 1px solid #f7f7f7;
+    height: calc(100% - 120px);
+}
+#indexMensagens .message-previous {
+    margin : 0 !important;
+    padding: 0 !important;
+    height: auto;
+    width: 100%;
+}
+#indexMensagens .previous {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px !important;
+    cursor: pointer;
+}
+
+#indexMensagens .previous a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#indexMensagens .message-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: auto;
+}
+
+#indexMensagens .message-main-receiver {
+    padding: 3px 20px !important;
+    /*padding: 10px 20px;*/
+    max-width: 60%;
+}
+
+#indexMensagens .message-main-sender {
+    padding: 3px 20px !important;
+    margin-left: 40% !important;
+    max-width: 60%;
+}
+
+#indexMensagens .message-text {
+    margin: 0 !important;
+    padding: 5px !important;
+    word-wrap:break-word;
+    font-weight: 200;
+    font-size: 12px;
+    padding-bottom: 0 !important;
+}
+
+#indexMensagens .message-time {
+    margin: 0 !important;
+    margin-left: 50px !important;
+    font-size: 12px;
+    text-align: right;
+    color: #9a9a9a;
+
+}
+
+#indexMensagens .receiver {
+    width: auto !important;
+    padding: 4px 10px 7px !important;
+    border-radius: 10px 10px 10px 0;
+    background: #ffffff;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+#indexMensagens .sender {
+    float: right;
+    width: auto !important;
+    background: #dcf8c6;
+    border-radius: 10px 10px 0 10px;
+    padding: 4px 10px 7px !important;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+
+/*Reply*/
+
+#indexMensagens .reply {
+    height: 60px;
+    width: 100%;
+    background-color: #f5f1ee;
+    padding: 10px 5px 10px 5px !important;
+    margin: 0 !important;
+    z-index: 1000;
+}
+
+#indexMensagens .reply-emojis {
+    padding: 5px !important;
+}
+
+#indexMensagens .reply-emojis i {
+    text-align: center;
+    padding: 5px 5px 5px 5px !important;
+    color: #93918f;
+    cursor: pointer;
+}
+
+#indexMensagens .reply-recording {
+    padding: 5px !important;
+}
+
+#indexMensagens .reply-recording i {
+    text-align: center;
+    padding: 5px !important;
+    color: #93918f;
+    cursor: pointer;
+}
+
+#indexMensagens .reply-send {
+    padding: 5px !important;
+}
+
+#indexMensagens .reply-send i {
+    text-align: center;
+    padding: 5px !important;
+    color: #93918f;
+    cursor: pointer;
+}
+
+#indexMensagens .reply-main {
+    padding: 2px 5px !important;
+}
+
+#indexMensagens .reply-main textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    padding: 5px !important;
+    outline: none;
+    border: none;
+    text-indent: 5px;
+    box-shadow: none;
+    height: 100%;
+    font-size: 16px;
+}
+
+#indexMensagens .reply-main textarea:focus {
+    outline: none;
+    border: none;
+    text-indent: 5px;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+    #indexMensagens .app {
+        top: 0;
+        height: 100%;
+    }
+    #indexMensagens .heading {
+        height: 70px;
+        background-color: #009688;
+    }
+    #indexMensagens .fa-2x {
+        font-size: 2.3em !important;
+    }
+    #indexMensagens .heading-avatar {
+        padding: 0 !important;
+    }
+    #indexMensagens .heading-avatar-icon img {
+        height: 50px;
+        width: 50px;
+    }
+    #indexMensagens .heading-compose {
+        padding: 5px !important;
+    }
+    #indexMensagens .heading-compose i {
+        color: #fff;
+        cursor: pointer;
+    }
+    #indexMensagens .heading-dot {
+        padding: 5px !important;
+        margin-left: 10px !important;
+    }
+    #indexMensagens .heading-dot i {
+        color: #fff;
+        cursor: pointer;
+    }
+    #indexMensagens .sideBar {
+        height: calc(100% - 130px);
+    }
+    #indexMensagens .sideBar-body {
+        height: 80px;
+    }
+    #indexMensagens .sideBar-avatar {
+        text-align: left;
+        padding: 0 8px !important;
+    }
+    #indexMensagens .avatar-icon img {
+        height: 55px;
+        width: 55px;
+    }
+    #indexMensagens .sideBar-main {
+        padding: 0 !important;
+    }
+    #indexMensagens .sideBar-main .row {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    #indexMensagens .sideBar-name {
+        padding: 10px 5px !important;
+    }
+    #indexMensagens .name-meta {
+        font-size: 16px;
+        padding: 5% !important;
+    }
+    #indexMensagens .sideBar-time {
+        padding: 10px !important;
+    }
+    #indexMensagens .time-meta {
+        text-align: right;
+        font-size: 10px;
+        padding: 4% !important;
+        color: rgba(0, 0, 0, .4);
+        vertical-align: baseline;
+    }
+
+    #indexMensagens .qtdmsg-meta {
+        text-align: right;
+        font-size: 10px;
+        padding: 4% !important;
+        color: rgba(0, 0, 0, .4);
+        vertical-align: baseline;
+    }
+
+    /*Conversation*/
+    #indexMensagens .conversation {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100%;
+        /*width: 100%;*/
+        border-left: 1px solid rgba(0, 0, 0, .08);
+        /*overflow-y: auto;*/
+    }
+    #indexMensagens .message {
+        height: calc(100% - 140px);
+    }
+    #indexMensagens .reply {
+        height: 70px;
+    }
+    #indexMensagens .reply-emojis {
+        padding: 5px 0 !important;
+    }
+    #indexMensagens .reply-emojis i {
+        padding: 5px 2px !important;
+        font-size: 1.8em !important;
+    }
+    #indexMensagens .reply-main {
+        padding: 2px 8px !important;
+    }
+    #indexMensagens .reply-main textarea {
+        padding: 8px !important;
+        font-size: 18px;
+    }
+    #indexMensagens .reply-recording {
+        padding: 5px 0 !important;
+    }
+    #indexMensagens .reply-recording i {
+        padding: 5px 0 !important;
+        font-size: 1.8em !important;
+    }
+    #indexMensagens .reply-send {
+        padding: 5px 0 !important;
+    }
+    #indexMensagens .reply-send i {
+        padding: 5px 2px 5px 0 !important;
+        font-size: 1.8em !important;
+    }
+}
+
+/*Utility classes*/
+/*Floats*/
+#indexMensagens .clearfix {
+    .clearfix();
+}
+
+#indexMensagens .center-block {
+    .center-block();
+}
+
+#indexMensagens .pull-right {
+    float: right !important;
+}
+
+#indexMensagens .pull-left {
+    float: left !important;
+}
+
+/*Toggling content*/
+/*Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1*/
+#indexMensagens .hide {
+    display: none !important;
+}
+
+#indexMensagens .show {
+    display: block !important;
+}
+
+#indexMensagens .invisible {
+    visibility: hidden;
+}
+
+#indexMensagens .text-hide {
+    .text-hide();
+}
+
+/*Hide from screenreaders and browsers*/
+/*Credit: HTML5 Boilerplate*/
+#indexMensagens .hidden {
+    display: none !important;
+}
+
+/*For Affix plugin*/
+#indexMensagens .affix {
+    position: fixed;
+}

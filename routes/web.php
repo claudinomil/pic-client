@@ -105,6 +105,9 @@ require __DIR__.'/routes_sobre_produto.php';
 //Chat
 require __DIR__.'/routes_chat.php';
 
+//Mensagens
+require __DIR__.'/routes_mensagens.php';
+
 //Mobile
 require __DIR__.'/routes_mobile.php';
 
