@@ -84,7 +84,7 @@ function mensagens_enviar_mensagem() {
 
     //Ajax
     $.ajax({
-        data: $("#frm_mensagens").serialize(),
+        data: $("#frm_mensagens_enviadas").serialize(),
         url: "mensagens/enviar_mensagem",
         type: "POST",
         dataType: "json",
