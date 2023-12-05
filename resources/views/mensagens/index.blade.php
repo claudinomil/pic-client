@@ -118,7 +118,7 @@
                 </div>
 
 
-                <form method="post" id="frm_mensagens">
+                <form method="post" id="frm_mensagens_enviadas">
                     @csrf
                     @method('POST')
 
