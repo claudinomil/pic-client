@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
 
 class MensagemController extends Controller
 {
@@ -15,7 +14,7 @@ class MensagemController extends Controller
 
     public function __construct()
     {
-        $this->middleware('check-permissao:mensagens_list', ['only' => ['index', 'enviar_mensagem']]);
+        $this->middleware('check-permissao:mensagens_list', ['only' => ['index', 'ultimas_conversas', 'enviar_mensagem', 'conversas']]);
     }
 
     public function index(Request $request)
