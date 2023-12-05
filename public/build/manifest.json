@@ -129,7 +129,7 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-3d5fca2a.css",
+    "file": "assets/app-c84148f7.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -162,10 +162,271 @@
       "assets/dripicons-v2-2c1ce9e2.svg"
     ],
     "css": [
-      "assets/app-3d5fca2a.css"
+      "assets/app-c84148f7.css"
     ],
-    "file": "assets/app-127e82d0.js",
+    "file": "assets/app-1c55ec59.js",
     "isEntry": true,
     "src": "resources/js/app.js"
-  }
+  },
+
+    "resources/assets_template/images/image_favicon.png": {
+        "file": "assets/image_favicon.png",
+        "isEntry": true,
+        "src": "resources/assets_template/images/image_favicon.png"
+    },
+    "resources/assets_template/libs/jquery/jquery.min.js": {
+        "file": "assets/jquery.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/jquery/jquery.min.js"
+    },
+    "resources/assets_template/libs/bootstrap/bootstrap.min.js": {
+        "file": "assets/bootstrap.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/bootstrap/bootstrap.min.js"
+    },
+    "resources/assets_template/libs/jquery-validation/jquery-validation.min.js": {
+        "file": "assets/jquery-validation.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/jquery-validation/jquery-validation.min.js"
+    },
+    "resources/assets_template/libs/jquery-validation/jquery-validation-pt-br.js": {
+        "file": "assets/jquery-validation-pt-br.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/jquery-validation/jquery-validation-pt-br.js"
+    },
+    "resources/assets_template/js/jquery-validation-methods.js": {
+        "file": "assets/jquery-validation-methods.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/jquery-validation-methods.js"
+    },
+    "resources/assets_template/libs/metismenu/metismenu.min.js": {
+        "file": "assets/metismenu.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/metismenu/metismenu.min.js"
+    },
+    "resources/assets_template/libs/simplebar/simplebar.min.js": {
+        "file": "assets/simplebar.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/simplebar/simplebar.min.js"
+    },
+    "resources/assets_template/libs/node-waves/node-waves.min.js": {
+        "file": "assets/node-waves.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/node-waves/node-waves.min.js"
+    },
+    "resources/assets_template/libs/sweetalert2/sweetalert2.min.js": {
+        "file": "assets/sweetalert2.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/sweetalert2/sweetalert2.min.js"
+    },
+    "resources/assets_template/libs/select2/select2.min.js": {
+        "file": "assets/select2.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/select2/select2.min.js"
+    },
+    "resources/assets_template/libs/datatables/datatables.min.js": {
+        "file": "assets/datatables.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/datatables/datatables.min.js"
+    },
+    "resources/assets_template/libs/jszip/jszip.min.js": {
+        "file": "assets/jszip.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/jszip/jszip.min.js"
+    },
+    "resources/assets_template/libs/pdfmake/pdfmake.min.js": {
+        "file": "assets/pdfmake.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/pdfmake/pdfmake.min.js"
+    },
+    "resources/assets_template/libs/jquery-mask/jquery.mask.min.js": {
+        "file": "assets/jquery.mask.min.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/jquery-mask/jquery.mask.min.js"
+    },
+    "resources/assets_template/libs/tinymce/tinymce.js": {
+        "file": "assets/tinymce/tinymce.js",
+        "isEntry": true,
+        "src": "resources/assets_template/libs/tinymce/tinymce.js"
+    },
+    "resources/assets_template/js/jquery-masks.js": {
+        "file": "assets/jquery-masks.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/jquery-masks.js"
+    },
+    "resources/assets_template/js/template.js": {
+        "file": "assets/template.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/template.js"
+    },
+    "resources/assets_template/js/main.js": {
+        "file": "assets/main.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/main.js"
+    },
+    "resources/assets_template/js/functions.js": {
+        "file": "assets/functions.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/functions.js"
+    },
+    "resources/assets_template/js/scripts_template_init.js": {
+        "file": "assets/scripts_template_init.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_template_init.js"
+    },
+    "resources/assets_template/js/scripts_dashboards.js": {
+        "file": "assets/scripts_dashboards.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_dashboards.js"
+    },
+    "resources/assets_template/js/scripts_departamentos.js": {
+        "file": "assets/scripts_departamentos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_departamentos.js"
+    },
+    "resources/assets_template/js/scripts_funcionarios.js": {
+        "file": "assets/scripts_funcionarios.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_funcionarios.js"
+    },
+    "resources/assets_template/js/scripts_generos.js": {
+        "file": "assets/scripts_generos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_generos.js"
+    },
+    "resources/assets_template/js/scripts_grupos.js": {
+        "file": "assets/scripts_grupos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_grupos.js"
+    },
+    "resources/assets_template/js/scripts_identidade_orgaos.js": {
+        "file": "assets/scripts_identidade_orgaos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_identidade_orgaos.js"
+    },
+    "resources/assets_template/js/scripts_estados_civis.js": {
+        "file": "assets/scripts_estados_civis.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_estados_civis.js"
+    },
+    "resources/assets_template/js/scripts_modulos.js": {
+        "file": "assets/scripts_modulos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_modulos.js"
+    },
+    "resources/assets_template/js/scripts_nacionalidades.js": {
+        "file": "assets/scripts_nacionalidades.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_nacionalidades.js"
+    },
+    "resources/assets_template/js/scripts_naturalidades.js": {
+        "file": "assets/scripts_naturalidades.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_naturalidades.js"
+    },
+    "resources/assets_template/js/scripts_notificacoes.js": {
+        "file": "assets/scripts_notificacoes.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_notificacoes.js"
+    },
+    "resources/assets_template/js/scripts_funcoes.js": {
+        "file": "assets/scripts_funcoes.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_funcoes.js"
+    },
+    "resources/assets_template/js/scripts_escolaridades.js": {
+        "file": "assets/scripts_escolaridades.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_escolaridades.js"
+    },
+    "resources/assets_template/js/scripts_submodulos.js": {
+        "file": "assets/scripts_submodulos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_submodulos.js"
+    },
+    "resources/assets_template/js/scripts_ferramentas.js": {
+        "file": "assets/scripts_ferramentas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_ferramentas.js"
+    },
+    "resources/assets_template/js/scripts_users.js": {
+        "file": "assets/scripts_users.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_users.js"
+    },
+    "resources/assets_template/js/scripts_avaliacoes.js": {
+        "file": "assets/scripts_avaliacoes.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_avaliacoes.js"
+    },
+    "resources/assets_template/js/scripts_tipos_escolas.js": {
+        "file": "assets/scripts_tipos_escolas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_tipos_escolas.js"
+    },
+    "resources/assets_template/js/scripts_niveis_ensinos.js": {
+        "file": "assets/scripts_niveis_ensinos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_niveis_ensinos.js"
+    },
+    "resources/assets_template/js/scripts_escolas.js": {
+        "file": "assets/scripts_escolas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_escolas.js"
+    },
+    "resources/assets_template/js/scripts_turmas.js": {
+        "file": "assets/scripts_turmas.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_turmas.js"
+    },
+    "resources/assets_template/js/scripts_professores.js": {
+        "file": "assets/scripts_professores.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_professores.js"
+    },
+    "resources/assets_template/js/scripts_nees.js": {
+        "file": "assets/scripts_nees.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_nees.js"
+    },
+    "resources/assets_template/js/scripts_sobre_produto.js": {
+        "file": "assets/scripts_sobre_produto.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_sobre_produto.js"
+    },
+    "resources/assets_template/js/scripts_alunos.js": {
+        "file": "assets/scripts_alunos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_alunos.js"
+    },
+    "resources/assets_template/js/scripts_espacos_colaboracoes.js": {
+        "file": "assets/scripts_espacos_colaboracoes.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_espacos_colaboracoes.js"
+    },
+    "resources/assets_template/js/scripts_calendarios_inclusivos.js": {
+        "file": "assets/scripts_calendarios_inclusivos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_calendarios_inclusivos.js"
+    },
+    "resources/assets_template/js/scripts_profiles.js": {
+        "file": "assets/scripts_profiles.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_profiles.js"
+    },
+    "resources/assets_template/js/scripts_logos.js": {
+        "file": "assets/scripts_logos.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_logos.js"
+    },
+    "resources/assets_template/js/chat.js": {
+        "file": "assets/chat.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/chat.js"
+    },
+    "resources/assets_template/js/scripts_mensagens.js": {
+        "file": "assets/scripts_mensagens.js",
+        "isEntry": true,
+        "src": "resources/assets_template/js/scripts_mensagens.js"
+    }
 }
