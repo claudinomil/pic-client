@@ -122,9 +122,9 @@
                     @csrf
                     @method('POST')
 
-                    <input type="hiddenx" id="remetente_user_id" name="remetente_user_id" value="{{$usuario_logado['id']}}">
-                    <input type="hiddenx" id="destinatario_user_id" name="destinatario_user_id" value="0">
-                    <input type="hiddenx" id="mensagem" name="mensagem" value="">
+                    <input type="hidden" id="remetente_user_id" name="remetente_user_id" value="{{$usuario_logado['id']}}">
+                    <input type="hidden" id="destinatario_user_id" name="destinatario_user_id" value="0">
+                    <input type="hidden" id="mensagem" name="mensagem" value="">
 
                     <div class="row reply">
                         <div class="col-sm-11 col-xs-11 reply-main">

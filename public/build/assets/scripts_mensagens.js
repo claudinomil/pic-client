@@ -20,7 +20,7 @@ function mensagens_montar_destinatario(op, destinatario_user_id, avatar, name) {
     //Se veio da Novas Conversas fechar o SlideBar
     if (op == 3) {$("#mensagensNovaConversaFechar").trigger('click');}
 
-    //mensagens_montar_conversas();
+    mensagens_montar_conversas();
     // mensagens_gravar_como_lida();
     // mensagens_gravar_como_recebidas();
     mensagens_ultimas_conversas();
