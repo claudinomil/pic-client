@@ -66,7 +66,6 @@
                                 $id = $dado['id'];
                                 $avatar = $dado['avatar'];
                                 $name = $dado['name'];
-                                if (strlen($name) > 28) {$name = substr($name, 0, 28).' ...';}
                             @endphp
 
                             <div class="row sideBar-body mensagens_filtrar_novas_conversas" onclick="mensagens_montar_destinatario(3, '{{$id}}', '{{$avatar}}', '{{$name}}');" data-filtro="{{$name}}">
@@ -102,10 +101,10 @@
                     </div>
                     <div class="col-sm-2 col-xs-2 heading-dot pull-right">&nbsp;</div>
                     <div class="col-sm-1 col-xs-1 heading-dot pull-right">
-                        <i class="fa fa-ellipsis-v fa-2x pull-right dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" id="mensagensEncerrar">Sair</a></li>
-                        </ul>
+{{--                        <i class="fa fa-ellipsis-v fa-2x pull-right dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>--}}
+{{--                        <ul class="dropdown-menu dropdown-menu-end">--}}
+{{--                            <li><a class="dropdown-item" href="#" id="mensagensEncerrar">Sair</a></li>--}}
+{{--                        </ul>--}}
                     </div>
                 </div>
                 <div class="row message" id="mensagensConversas">

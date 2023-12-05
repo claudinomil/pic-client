@@ -322,6 +322,7 @@
 }
 
 #indexMensagens #mensagensConversas {
+    height: 310px;
     /*overflow-y: scroll !important;*/
 }
 

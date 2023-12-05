@@ -129,7 +129,7 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-c84148f7.css",
+    "file": "assets/app-69b6d8d9.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -162,9 +162,9 @@
       "assets/dripicons-v2-2c1ce9e2.svg"
     ],
     "css": [
-      "assets/app-c84148f7.css"
+      "assets/app-69b6d8d9.css"
     ],
-    "file": "assets/app-1c55ec59.js",
+    "file": "assets/app-b64c75d1.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
