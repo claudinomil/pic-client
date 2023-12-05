@@ -41,17 +41,17 @@
                     </div>
 
                     <!-- Formulário - Form -->
-                    <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">
-                        <input type="hidden" id="frm_operacao" name="frm_operacao">
-                        <input type="hidden" id="registro_id" name="registro_id">
+{{--                    <form id="{{$ajaxNameFormSubmodulo}}" name="{{$ajaxNameFormSubmodulo}}">--}}
+{{--                        <input type="hidden" id="frm_operacao" name="frm_operacao">--}}
+{{--                        <input type="hidden" id="registro_id" name="registro_id">--}}
 
-                        <div class="row mt-4">
-                            <div class="form-group col-12 col-md-4 pb-3">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="name" name="name" required="required">
-                            </div>
-                        </div>
-                    </form>
+{{--                        <div class="row mt-4">--}}
+{{--                            <div class="form-group col-12 col-md-4 pb-3">--}}
+{{--                                <label class="form-label">Nome</label>--}}
+{{--                                <input type="text" class="form-control" id="name" name="name" required="required">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
                 </div>
             </div>
         </div>
